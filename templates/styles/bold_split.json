@@ -1,0 +1,15 @@
+{
+  "style_id": "bold_split",
+  "template_id": "style_bold_split",
+  "label": "强冲击分割版",
+  "material_type": ["营销海报", "KT板", "展架", "台卡", "传单"],
+  "color_strategy": "high_contrast_warm",
+  "composition_strategy": "split_hero",
+  "texture_guidance": "番茄红色块、奶油白留白、锅气蒸汽、粗颗粒纸面、局部高光和硬边色块并置。",
+  "typography_profile": "bold_brush_calligraphy",
+  "scene_prompt": "BOLD SPLIT PROMOTION DESIGN. light: strong directional key light creating crisp dramatic shadows while keeping the food bright and appetizing; choose ONE of these light setups per generation — (a) diagonal key from upper-left + hot rim lower-right, (b) front-side key light with crisp food highlights, (c) backlight silhouette with rim-lit steam but no underexposed food. material: tomato-red paper block, cream white torn paper edge, lacquered wood accent, rough grain poster surface, bright plate rim and controlled steam; no polished luxury hotel texture. color: bright tomato red #E53935, molten orange #F36B21, 奶油白 #FFF1D6, fresh green #2EAD4F as a small appetite accent below 10% of canvas, Meituan-yellow accents below 12% of canvas. composition: VARY the split method each time — randomly pick ONE from: (1) vertical 55/45 divide, (2) diagonal slash at 15-30 degrees, (3) horizontal top-heavy 60/40 stack, (4) irregular jagged tear/rip edge, (5) large geometric shape cutout (circle or triangle) carving food area from color block, (6) converging wedge where two angled planes meet at the food. One zone carries the hero food/heat visual (40-55% canvas), the other zone carries title + offer (28-35% height). NEVER default to vertical left-right split every time. avoid: no full-frame random clutter, no pale pastel palette, no black-dominant split, no muddy dark red background, no copper hotpot unless explicitly requested, no generic gold 3D text, no unreadable small type, NEVER repeat the same split direction in consecutive outputs.",
+  "best_for": ["promotion", "social_spread", "daily_attract"],
+  "avoid_for": ["brand_image", "light_food", "premium_quiet"],
+  "category_affinity": ["火锅", "四川火锅", "重庆火锅", "川菜", "湘菜", "川湘菜", "广西菜", "江西菜", "湖北菜", "烧烤", "烤肉", "麻辣香锅", "江西小炒", "螺蛳粉", "小炒肉"],
+  "design_lessons": ["高冲击促销的核心是明确的视觉区域划分和强标题区，而非固定的左右分割。每次创作应随机选择不同的分割方式（对角、横切、撕裂、几何挖切、楔形汇聚等），避免重复套路。"]
+}

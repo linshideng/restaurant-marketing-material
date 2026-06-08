@@ -1,0 +1,15 @@
+{
+  "style_id": "cyber_gaming",
+  "template_id": "style_cyber_gaming",
+  "label": "赛博电竞版",
+  "material_type": ["营销海报", "KT板", "展架", "台卡", "传单", "朋友圈海报", "短视频封面"],
+  "color_strategy": "cyber_neon",
+  "composition_strategy": "glitch_dynamic",
+  "texture_guidance": "故障纹理与扫描线、全息渐变材质、电路板线条图案、像素化马赛克边缘、深空背景星尘、RGB分离色差效果。",
+  "typography_profile": "tech_monospace",
+  "scene_prompt": "CYBERPUNK GAMING RESTAURANT POSTER. light: deep dark base with vivid neon accent lights in purple-blue-magenta, LED strip edge lighting, holographic reflections on glossy surfaces, dramatic backlight silhouettes, sci-fi volumetric light beams cutting through haze. material: glossy black reflective surfaces, holographic foil shimmer, circuit board trace patterns, glitch distortion texture overlays, scan-line effects, floating UI/HUD elements as decoration, frosted glass with RGB edge glow, chrome metallic food containers. color: deep space black #0D0D1A, electric purple #9B59B6, cyber blue #00D4FF, hot magenta #FF006E, neon green accent #00FF88, holographic gradient purple-to-cyan. composition: dynamic diagonal energy flow; hero food/drink item center with dramatic neon backlighting creating rim glow; bold monospace headline with glitch-double or RGB-split effect; geometric HUD-style frames and data-overlay decorative elements; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, dark space or subtle circuit trace pattern is fine. avoid: no warm natural lighting, no rustic organic textures, no pastel soft colors, no traditional Chinese elements, no feminine floral patterns, no minimalist whitespace, no vintage retro warmth, no hand-drawn illustrations.",
+  "best_for": ["nightlife", "social_spread", "new_product", "promotion"],
+  "avoid_for": ["family_kids", "traditional_chinese", "natural_organic", "premium_formal"],
+  "category_affinity": ["电竞酒店餐饮", "游戏主题餐厅", "科幻概念店", "二次元主题咖啡", "剧本杀配套餐饮", "深夜食堂", "鸡尾酒吧", "潮玩快餐"],
+  "design_lessons": ["赛博电竞风与霓虹夜场风的本质区别：霓虹是'怀旧港式街头'，赛博是'未来科技世界'。关键差异在于故障纹理、HUD界面元素和冷调紫蓝渐变取代暖调橙粉霓虹。深色底+高饱和点光是共性，但材质语言完全不同。"]
+}

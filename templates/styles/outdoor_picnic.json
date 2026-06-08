@@ -1,0 +1,15 @@
+{
+  "style_id": "outdoor_picnic",
+  "template_id": "style_outdoor_picnic",
+  "label": "露营野餐版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "短视频封面", "小程序 Banner"],
+  "color_strategy": "fresh_outdoor",
+  "composition_strategy": "casual_flatlay",
+  "texture_guidance": "红白格纹野餐布、藤编篮、牛皮纸袋、草地与野花、帆布帐篷、木质砧板、斑驳树影光斑。",
+  "typography_profile": "soft_rounded_sans",
+  "scene_prompt": "OUTDOOR PICNIC LIFESTYLE POSTER. light: bright natural sunlight with dappled tree shadows creating playful light patterns, golden-hour warmth on food surfaces, fresh outdoor open-air feeling, occasional lens flare or bokeh from foliage. material: red-and-white gingham picnic blanket on grass, wicker basket with bread and fruits, kraft paper bags and wrapping, wildflowers in mason jar, canvas tent or umbrella edge visible, wooden cutting board, enamel mugs, straw hat as prop, scattered fresh berries or cherry tomatoes. color: grass green #7CB342, sunshine warm #FFCA28, gingham red #E57373, kraft natural #C9A96E, sky blue #81D4FA, cream white #FFFDE7. composition: casual overhead flat-lay or slightly angled picnic scene; food items arranged naturally as if mid-meal on gingham blanket; rounded sans-serif headline positioned in clear area with friendly approachable weight; outdoor elements (grass edge, flowers, basket) framing the scene naturally; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft sky or gentle bokeh is fine. avoid: no dark indoor settings, no formal fine-dining plating, no industrial textures, no neon night colors, no heavy Chinese traditional patterns, no stark minimalist emptiness, no luxury premium restraint.",
+  "best_for": ["social_spread", "seasonal", "new_product", "festival"],
+  "avoid_for": ["nightlife", "premium_formal", "fiery_hotpot", "industrial_craft"],
+  "category_affinity": ["露营餐吧", "野餐下午茶", "郊外农庄", "City Walk集市", "轻食沙拉", "面包烘焙", "果汁冷饮", "Brunch", "宠物友好餐厅"],
+  "design_lessons": ["露营野餐风的核心是'不刻意的美好感'——食物像是随手摆放而非精心摆盘，格纹布和藤编篮是快速建立野餐联想的标志性道具。自然光斑和草地色彩给人即刻想出门的冲动。"]
+}

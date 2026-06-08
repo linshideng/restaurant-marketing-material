@@ -1,0 +1,15 @@
+{
+  "style_id": "street_warm",
+  "template_id": "style_street_warm",
+  "label": "街巷烟火版",
+  "material_type": ["营销海报", "KT板", "展架", "台卡", "朋友圈海报"],
+  "color_strategy": "warm_street",
+  "composition_strategy": "immersive_full_scene",
+  "texture_guidance": "暖光灯串、蒸汽、木桌、旧招牌、真实门店空间和餐具。",
+  "typography_profile": "handpainted_sign",
+  "scene_prompt": "STREET WARM RESTAURANT POSTER. light: warm string lights and shopfront lamps from top background, soft steam glow around food, slight foreground shadow for depth. material: old wood table, ceramic bowls, metal pot, fabric curtain, warm signboard, real restaurant wall texture, steam and oil sheen. color: amber #D89038, honey #F2B85B, brick #8F3A26, dark umber #2B1A12, cream #F6E4C6; palette should feel warm but not red-gold festival. composition: immersive full restaurant scene with foreground table occupying lower 40%, midground diners or shop elements blurred, title in upper 28%; leave a clean reading pocket around text. avoid: no high-density collage, no dark neon nightclub, no fake luxury hotel, no random readable shop signs, no copper hotpot unless requested.",
+  "best_for": ["daily_attract", "promotion", "social_spread"],
+  "avoid_for": ["minimal_brand", "fresh_light_food"],
+  "category_affinity": ["火锅", "川菜", "湘菜", "小吃", "早餐", "粉面", "烧烤", "粤菜", "东北菜"],
+  "design_lessons": ["烟火气来自真实空间层次和暖光蒸汽，不能只靠把背景变黄。"]
+}

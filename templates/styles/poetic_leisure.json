@@ -1,0 +1,15 @@
+{
+  "style_id": "poetic_leisure",
+  "template_id": "style_poetic_leisure",
+  "label": "诗意闲适版",
+  "material_type": ["营销海报", "KT板", "台卡", "朋友圈海报", "小程序 Banner"],
+  "color_strategy": "muted_poetic",
+  "composition_strategy": "gentle_float",
+  "texture_guidance": "手工棉麻面料、干花与枯枝、水彩晕染肌理、旧书页纸张、陶器釉面开片、淡墨渍印痕。",
+  "typography_profile": "warm_handwritten_kai",
+  "scene_prompt": "POETIC LEISURE SLOW-LIFE DINING POSTER. light: soft overcast morning light, gentle and even with no harsh directional shadows, dreamy slightly hazy atmosphere, pale warm undertone as if filtered through sheer curtains. material: handwoven linen cloth, dried flower stems and pressed petals, watercolor wash textures in background, old book pages or rice paper, handmade ceramic bowls with crackle glaze, wooden chopstick rests, cotton thread details. color: misty lavender #D4C5E2, warm oat #E8DCC8, faded sage #B8C8B0, soft apricot #F0D8C0, rice paper white #FAF5EF, ink grey #6B6B6B. composition: gentle floating layout with elements arranged loosely as if placed by hand; generous whitespace creating a meditative pace; headline in warm handwritten kai positioned organically off-center; food styled simply on handmade ceramics with natural garnish; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft watercolor wash or blank rice paper is fine. avoid: no bright saturated colors, no bold geometric shapes, no urban industrial textures, no loud promotional badges, no neon lighting, no crowded multi-item layouts, no digital slick finish.",
+  "best_for": ["brand_image", "seasonal", "social_spread", "new_product"],
+  "avoid_for": ["heavy_promotion", "nightlife", "fiery_hotpot", "fast_food"],
+  "category_affinity": ["茶馆", "素食", "花艺餐厅", "独立咖啡馆", "书店餐饮", "日式和果子", "养生甜品", "文创园区餐饮"],
+  "design_lessons": ["诗意感来自留白的节奏和材质的手作温度。干花、棉麻、陶器这三样是快速建立'慢生活'联想的视觉锚点。色彩要克制低饱和，让观者感受到安静而非刺激。"]
+}

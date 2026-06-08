@@ -1,0 +1,284 @@
+{
+  "realism_frameworks": {
+    "realistic": "Professional food photography style. DSLR camera feeling, natural lighting, real material textures, shallow depth of field, authentic restaurant atmosphere without over-rendering. Preserve the modest, genuine look of a real neighborhood restaurant — avoid luxury hotel aesthetics unless the store actually is upscale. When reference images are provided, match their lighting conditions, material quality, and spatial scale faithfully.",
+    "balanced": "3D rendered miniature diorama scene with volumetric lighting, realistic material textures, depth of field, cinematic warm color grading, premium commercial poster quality. Light beautification is acceptable but the scene should still feel plausible as a real restaurant environment.",
+    "artistic": "Bold graphic illustration style. Flat color blocks, simplified shapes, hand-drawn textures, vector-like clarity, strong composition and clean readable typography. Heavy stylization is expected — visual impact takes priority over photorealism."
+  },
+  "realism_reference_image_constraint": "参考图保真优先：保留食材形态、主要器皿、菜品结构、真实材质、自然瑕疵和原始光线方向；允许适度商业美化，如轻度补光、自然提亮、适度锐化、清理杂乱背景、克制增强食欲色彩和重构海报背景。菜品主体必须曝光充足、细节清晰、自然食物高光可见，但不能过曝、不能厚重油光。不要把菜品主体处理成 3D、塑料、玩具、蜡质、涂抹油画、暖黄滤镜、灰墨暗沉、低对比、过度光滑或额外虚构菜品。",
+  "tone_modifiers": {
+    "极简清冷": "minimalist composition, generous negative space, cool-toned lighting, restrained palette, precise typography",
+    "热闹喜庆": "festive abundance, warm saturated colors, celebratory props, joyful energy, strong conversion atmosphere",
+    "复古怀旧": "vintage film grain, faded warm tones, retro typography, aged textures, neighborhood memory",
+    "国潮中式": "modern Chinese aesthetic, ink-wash accents, traditional patterns with contemporary twist, confident ceremonial rhythm",
+    "清新自然": "fresh natural light, botanical elements, soft pastel accents, airy composition, trustworthy freshness",
+    "奢华精致": "premium materials, gold accents, dramatic lighting, sophisticated restraint, high-end dining cues"
+  },
+  "typography_profiles": {
+    "modern_minimal_sans": {
+      "id": "modern_minimal_sans",
+      "label": "现代简约无衬线",
+      "category": "sans-serif",
+      "prompt_guidance": "现代无衬线标题字，笔画均匀，开放字腔，结构清晰，边缘干净，适合简约高级和信息高效传达。",
+      "open_font_examples": [
+        {"name": "Source Han Sans", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["强烈手作感", "传统书法主视觉"]
+    },
+    "elegant_serif_song": {
+      "id": "elegant_serif_song",
+      "label": "优雅人文宋体",
+      "category": "serif",
+      "prompt_guidance": "优雅人文衬线标题字，横细竖粗，收笔克制，字面舒展，有文化感和精致餐饮气质。",
+      "open_font_examples": [
+        {"name": "Source Han Serif", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-serif", "license_status": "verified"}
+      ],
+      "avoid_for": ["强冲击促销", "亲子活泼"]
+    },
+    "soft_rounded_sans": {
+      "id": "soft_rounded_sans",
+      "label": "亲和圆体",
+      "category": "rounded-sans",
+      "prompt_guidance": "亲和圆润标题字，端点柔和，字形饱满，节奏轻松，适合甜品、亲子、茶饮和温暖友好的餐饮氛围。",
+      "open_font_examples": [
+        {"name": "jf open-huninn", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/justfont/open-huninn-font", "license_status": "verified"}
+      ],
+      "avoid_for": ["硬核工业", "高端冷感"]
+    },
+    "warm_handwritten_kai": {
+      "id": "warm_handwritten_kai",
+      "label": "温润手写楷体",
+      "category": "handwritten",
+      "prompt_guidance": "温润手写标题字，接近楷书和手写招牌的自然笔意，笔画有轻微起伏，亲切但保持可读。",
+      "open_font_examples": [
+        {"name": "LXGW WenKai", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/lxgw/LxgwWenKaiGB", "license_status": "verified"}
+      ],
+      "avoid_for": ["极简科技", "超大促销数字"]
+    },
+    "bold_brush_calligraphy": {
+      "id": "bold_brush_calligraphy",
+      "label": "豪爽毛笔字",
+      "category": "calligraphy",
+      "prompt_guidance": "豪爽毛笔标题字，粗细对比强，笔势有速度和爆发力，适合热辣、国潮、节庆和强食欲场景。",
+      "open_font_examples": [
+        {"name": "LXGW WenKai", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/lxgw/LxgwWenKaiGB", "license_status": "verified"}
+      ],
+      "avoid_for": ["极小尺寸 Banner", "需要大量正文"]
+    },
+    "tech_monospace": {
+      "id": "tech_monospace",
+      "label": "硬核等宽",
+      "category": "monospace",
+      "prompt_guidance": "硬核等宽标题字，字符宽度一致，数字和符号清晰，带科技感、参数感和理性秩序。",
+      "open_font_examples": [
+        {"name": "JetBrains Mono", "license": "SIL Open Font License 1.1", "source_url": "https://www.jetbrains.com/lp/mono/", "license_status": "verified"}
+      ],
+      "avoid_for": ["传统中式", "柔软亲子"]
+    },
+    "retro_pixel_display": {
+      "id": "retro_pixel_display",
+      "label": "复古像素点阵",
+      "category": "pixel-display",
+      "prompt_guidance": "复古像素标题字，方块网格感明显，边缘硬朗，适合潮玩、游戏感、怀旧电子屏和年轻化活动。",
+      "open_font_examples": [
+        {"name": "Cubic 11", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/ACh-K/Cubic-11", "license_status": "verified"}
+      ],
+      "avoid_for": ["高端精致", "大段中文正文"]
+    },
+    "bold_display_latin_numeric": {
+      "id": "bold_display_latin_numeric",
+      "label": "窄体数字展示",
+      "category": "display",
+      "prompt_guidance": "高冲击窄体展示字，适合英文、数字、价格和短促销词；中文标题保持简洁粗黑，不使用复杂装饰。",
+      "open_font_examples": [
+        {"name": "Bebas Neue", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/dharmatype/Bebas-Neue", "license_status": "verified"}
+      ],
+      "avoid_for": ["长中文标题", "传统文化氛围"]
+    },
+    "retro_mincho_display": {
+      "id": "retro_mincho_display",
+      "label": "复古明朝装饰",
+      "category": "serif-display",
+      "prompt_guidance": "复古明朝风标题字，衬线细节明显，带旧印刷、文艺杂志和怀旧招贴气质。",
+      "open_font_examples": [
+        {"name": "Source Han Serif", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-serif", "license_status": "verified"}
+      ],
+      "avoid_for": ["强促销爆款", "亲子童趣"]
+    },
+    "handpainted_sign": {
+      "id": "handpainted_sign",
+      "label": "手绘招牌字",
+      "category": "handpainted",
+      "prompt_guidance": "手绘招牌标题字，笔画略有不规则，像门头手写招牌或街边菜单，温暖真实、有烟火气。",
+      "open_font_examples": [
+        {"name": "LXGW WenKai", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/lxgw/LxgwWenKaiGB", "license_status": "verified"}
+      ],
+      "avoid_for": ["冷感极简", "科技参数场景"]
+    },
+    "chalkboard_craft": {
+      "id": "chalkboard_craft",
+      "label": "粉笔手作字",
+      "category": "chalk-display",
+      "prompt_guidance": "粉笔手作标题字，边缘有粉尘颗粒，像黑板菜单和手工烘焙标牌，质朴、有手作感。",
+      "open_font_examples": [
+        {"name": "LXGW WenKai", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/lxgw/LxgwWenKaiGB", "license_status": "verified"}
+      ],
+      "avoid_for": ["精致商务", "海鲜清爽"]
+    },
+    "neon_sign_display": {
+      "id": "neon_sign_display",
+      "label": "复古霓虹字",
+      "category": "neon-display",
+      "prompt_guidance": "复古霓虹标题字，线条发光，外轮廓清晰，适合夜宵、酒馆、深夜食堂和潮流街区氛围。",
+      "open_font_examples": [
+        {"name": "Bebas Neue", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/dharmatype/Bebas-Neue", "license_status": "verified"}
+      ],
+      "avoid_for": ["日间自然", "水墨雅致"]
+    },
+    "organic_humanist_sans": {
+      "id": "organic_humanist_sans",
+      "label": "自然人文无衬线",
+      "category": "humanist-sans",
+      "prompt_guidance": "自然人文无衬线标题字，笔画干净但不冰冷，字面舒展，适合健康、田园、轻食和清新可信赖氛围。",
+      "open_font_examples": [
+        {"name": "Source Han Sans", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["重口味爆款", "夜间霓虹"]
+    },
+    "ceremonial_embossed": {
+      "id": "ceremonial_embossed",
+      "label": "节庆浮雕字",
+      "category": "embossed-display",
+      "prompt_guidance": "节庆浮雕标题字，字形厚重，边缘有立体压印和金属质感，但保持清晰可读，适合红金庆典和高转化活动。",
+      "open_font_examples": [
+        {"name": "Source Han Serif", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-serif", "license_status": "verified"}
+      ],
+      "avoid_for": ["极简留白", "清新自然"]
+    },
+    "playful_bubble_display": {
+      "id": "playful_bubble_display",
+      "label": "圆润泡泡字",
+      "category": "playful-display",
+      "prompt_guidance": "圆润泡泡标题字，字形饱满可爱，边角柔和，有轻微弹跳感，适合亲子、家庭聚餐和轻松欢乐场景。",
+      "open_font_examples": [
+        {"name": "Source Han Sans", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["高端冷感", "硬核工业"]
+    },
+    "sweet_cookie_3d": {
+      "id": "sweet_cookie_3d",
+      "label": "糖霜饼干立体字",
+      "category": "3d-display",
+      "prompt_guidance": "3D 立体糖霜饼干标题字，字形饱满厚实，表面有奶油饼干纹理和糖霜淋面质感，边缘圆润带奶油色描边，整体有浮雕立体感和甜品材质真实感，适合甜品、烘焙、少女风和梦幻营销场景。字体填充使用深莓红或巧克力色，描边使用奶油白或淡粉色，营造可爱与食欲感并存的视觉效果。",
+      "open_font_examples": [
+        {"name": "Source Han Sans Heavy", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["极简科技", "高端冷感", "水墨文化", "硬核工业"]
+    },
+    "elegant_thin_sans": {
+      "id": "elegant_thin_sans",
+      "label": "纤细优雅无衬线",
+      "category": "thin-sans",
+      "prompt_guidance": "纤细优雅无衬线标题字，极细笔画、大字间距、端点干净利落，整体有强烈的呼吸留白感和高级时尚杂志气质，适合极简、奶油风、韩式空间和轻奢生活方式设计。",
+      "open_font_examples": [
+        {"name": "Source Han Sans ExtraLight", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["重口味促销", "街头烟火", "强冲击远距离", "传统书法"]
+    },
+    "heavy_impact_sans": {
+      "id": "heavy_impact_sans",
+      "label": "重磅冲击黑体",
+      "category": "heavy-sans",
+      "prompt_guidance": "超粗窄体黑体标题字，笔画极粗、字面紧凑、视觉重量感强，倾斜或正体均可，适合强冲击促销、运动感和年轻化快节奏场景。中文使用加粗压缩黑体，数字和英文使用 Impact/Condensed 风格。",
+      "open_font_examples": [
+        {"name": "Source Han Sans Heavy", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["高端雅致", "极简留白", "柔软亲子"]
+    },
+    "ultra_display_heavy": {
+      "id": "ultra_display_heavy",
+      "label": "超大展示粗体",
+      "category": "ultra-display",
+      "prompt_guidance": "超大展示级粗体标题字，笔画极粗占满字面框，字形方正厚重有压迫力，适合作为画面主体视觉元素使用（文字即设计主角），配合裁切、遮罩或叠加效果。数字和价格用更极端的粗细对比。",
+      "open_font_examples": [
+        {"name": "Source Han Sans Heavy", "license": "SIL Open Font License 1.1", "source_url": "https://github.com/adobe-fonts/source-han-sans", "license_status": "verified"}
+      ],
+      "avoid_for": ["精致细腻", "文化水墨", "大段正文"]
+    }
+  },
+  "style_factor_options": {
+    "lighting_accent": ["golden_hour", "overcast", "neon_tint", "candlelight", "blue_hour", "soft_window_light", "lantern_glow", "studio_flash", "morning_haze"],
+    "texture_emphasis": ["matte", "glossy", "frosted", "rough_grain", "paper_cut", "linen_weave", "ceramic_glaze", "brushed_metal", "woodgrain"],
+    "color_shift": ["warm_10", "cool_10", "saturated_15", "neutral", "pastel_soft", "deep_contrast", "muted_earth", "fresh_green", "red_gold_accent"],
+    "composition_accent": ["asymmetric_balance", "centered_hero", "diagonal_flow", "frame_within_frame", "layered_depth", "top_heavy_title", "bottom_anchor", "floating_elements", "split_scene"]
+  },
+  "panorama_style_families": {
+    "collage_pop": {
+      "family": "拼贴爆款",
+      "background": "手撕纸、贴纸、网点颗粒、撞色色块、菜品抠图和热闹促销装饰形成高密度招贴长卷。",
+      "composition": "前两张用大字和不规则拼贴建立冲击，后续切片用菜品、食材和贴纸节奏延展。"
+    },
+    "natural_earth": {
+      "family": "地域自然",
+      "background": "产地山水、村落远景、植物叶影、木纹亚麻和晨光雾气形成自然可信的长卷空间。",
+      "composition": "前两张用地域/品牌识别和自然大字，后续切片用食材、菜品和环境层次延展。"
+    },
+    "street_warm": {
+      "family": "门店烟火",
+      "background": "真实门店、街巷暖光、砖墙、木质招牌、灯串、蒸汽和用餐人气作为平面化远景层。",
+      "composition": "前两张强调老店、人气和主菜热气，后续切片用门店场景与菜品交替延展。"
+    },
+    "bold_split": {
+      "family": "热辣爆款",
+      "background": "番茄红、暖橙、奶油白和少量鲜绿形成明亮高对比，配合火焰蒸汽、撕裂分割、辣椒花椒和粗颗粒海报质感组成强冲击长卷。",
+      "composition": "前两张用大字和主菜强对比压住首屏，后续切片用斜线、锅气和食材动势延展。"
+    },
+    "retro_poster": {
+      "family": "复古招贴",
+      "background": "旧纸、套印网点、怀旧门头、边框标牌、褪色油墨和地方老店纹理。",
+      "composition": "前两张像连续老招贴，后续切片用图章、旧照片卡和菜品画框延展。"
+    },
+    "ink_oriental": {
+      "family": "山水意境",
+      "background": "宣纸纤维、水墨山水、地域村落、竹木纹理、淡雾和克制金线形成东方长卷。",
+      "composition": "前两张用大字与山水留白建立识别，后续切片用菜品、印章和地域纹样延展。"
+    },
+    "festive_red": {
+      "family": "节庆国潮",
+      "background": "亮朱红纸材质、米白留白、灯笼暖光、祥云边框、金色纹样和团圆灯火氛围。",
+      "composition": "前两张用节庆大字和主菜建立仪式感，后续切片用灯笼、蒸汽和菜品层次延展。"
+    },
+    "neon_night": {
+      "family": "夜场霓虹",
+      "background": "深色街区、霓虹灯牌、湿润反光、街区光影和夜宵蒸汽。",
+      "composition": "前两张用发光标题和主菜形成夜场记忆点，后续切片用霓虹深度和菜品高光延展。"
+    },
+    "dark_premium": {
+      "family": "暗调高级",
+      "background": "暗木、石材、金属边缘、单点聚光、微妙烟雾和高级餐厅远景。",
+      "composition": "前两张用克制大字和主菜聚光，后续切片用材质细节与菜品高光延展。"
+    },
+    "default": {
+      "family": "丰富场景长卷",
+      "background": "结合菜系、地域和门店语境，使用多层材质、远景空间、装饰元素、光影颗粒和菜品层次形成完整长卷。",
+      "composition": "前两张完成识别和核心卖点，第三张开始延展菜品/工艺/场景，后续保持连续节奏。"
+    }
+  },
+  "iteration_constraints": {
+    "background": {
+      "preserve": ["copy_layout", "color_tone", "qr_position"],
+      "prompt_prefix": "IMPORTANT CONSTRAINT: Keep the current text content, text layout positions, overall color tone, and QR area completely unchanged. Only regenerate the background scene/atmosphere. The new background should be: "
+    },
+    "color_tone": {
+      "preserve": ["composition", "copy_content", "background_elements"],
+      "prompt_prefix": "IMPORTANT CONSTRAINT: Keep the current composition layout, text content, and background elements completely unchanged. Only shift the overall color palette and lighting tone to: "
+    },
+    "copy": {
+      "preserve": ["background", "main_visual", "color_tone"],
+      "prompt_prefix": "IMPORTANT CONSTRAINT: Keep the current background scene, main visual elements, and color tone completely unchanged. Only re-layout the text layer with new content: "
+    },
+    "style": {
+      "preserve": ["copy_content", "core_message"],
+      "prompt_prefix": "IMPORTANT CONSTRAINT: Keep the current text content and core marketing message unchanged. Switch the overall visual style to: "
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "style_id": "illustration_flat",
+  "template_id": "style_illustration_flat",
+  "label": "扁平插画版",
+  "material_type": ["营销海报", "朋友圈海报", "短视频封面", "小程序 Banner"],
+  "color_strategy": "flat_bright",
+  "composition_strategy": "graphic_scene",
+  "texture_guidance": "flat vector、solid color blocks、极少纸纹、清晰图形边界。",
+  "typography_profile": "soft_rounded_sans",
+  "scene_prompt": "FLAT VECTOR ILLUSTRATION POSTER. light: no realistic light source, use simple flat highlights only; no cast shadows except tiny graphic offsets. material: solid color blocks, clean vector shapes, simple illustrated bowls, simplified storefront, rounded graphic icons; no photographic texture. color: cream #FFF4DE, coral #FF6B5F, leaf green #4CAF70, dark ink #253238; use solid color fills, no complex gradients. composition: Canva-like template clarity; title block takes upper 25-30%, illustrated food/store scene takes lower 50%, small decorative icons around edges only. avoid: no photography, no 3D render, no realistic steam, no heavy shadow, no oil-paint texture, no chaotic collage.",
+  "best_for": ["festival", "social_spread", "family", "brand_image"],
+  "avoid_for": ["premium_realism", "hardcore_hotpot"],
+  "category_affinity": ["亲子餐厅", "茶饮", "甜品", "快餐", "节日活动"],
+  "design_lessons": ["扁平插画要用明确图形规则约束模型，否则容易退化成普通 3D 商业海报。"]
+}

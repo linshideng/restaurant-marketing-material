@@ -1,0 +1,15 @@
+{
+  "style_id": "ink_oriental",
+  "template_id": "style_ink_oriental",
+  "label": "水墨东方版",
+  "material_type": ["营销海报", "KT板", "展架", "朋友圈海报"],
+  "color_strategy": "ink_muted",
+  "composition_strategy": "asymmetric_negative_space",
+  "texture_guidance": "宣纸纤维、水墨晕染、陶瓷、竹木、茶雾和克制金线。",
+  "typography_profile": "elegant_serif_song",
+  "scene_prompt": "INK ORIENTAL RESTAURANT POSTER. light: soft window light from upper left through a courtyard or screen, low contrast, mist diffuses the background. material: rice paper fiber, ink wash gradient, celadon ceramic, bamboo or dark wood, fine tea steam, very subtle gold line accents. color: rice paper #F5F0E6, ink grey #3C3F3A, celadon #A8B8A0, tea brown #8A6A45; saturation stays low. composition: asymmetric negative space, title in upper-center or upper-right occupying 24-30%, food/tea/courtyard cue in lower opposite corner occupying 35-45%; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft ink wash, bamboo leaves, gentle mist or rice paper texture continuing naturally from the scene is fine. avoid: no red-gold festival frame, no neon, no latin patterns, no heavy brush chaos, no generic black-gold 3D title, no hard-edged geometric blocks or isolated architectural structures in the top-left that break the natural ink-wash flow.",
+  "best_for": ["brand_image", "festival", "new_product"],
+  "avoid_for": ["western_fast_food", "low_price_flash_sale"],
+  "category_affinity": ["粤菜", "江南菜", "茶馆", "新中式", "私房菜", "素食", "川湘菜", "川菜", "湘菜", "云贵川菜", "云南菜", "贵州菜", "广西菜", "江西菜", "湖北菜", "巴蜀", "宫保鸡丁", "地域菜"],
+  "design_lessons": ["东方调性要用留白和材质控制，不把所有传统元素堆在一起。"]
+}

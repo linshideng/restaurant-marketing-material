@@ -1,0 +1,15 @@
+{
+  "style_id": "zen_tea_modern",
+  "template_id": "style_zen_tea_modern",
+  "label": "新中式茶饮版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "短视频封面", "小程序 Banner"],
+  "color_strategy": "warm_zen",
+  "composition_strategy": "balanced_eastern",
+  "texture_guidance": "竹编器物、石头茶盘、柿子与枫叶装饰、团扇丝绸、陶土粗砂壶、暖色木质格栅、烟雾缭绕的茶汤热气。",
+  "typography_profile": "warm_handwritten_kai",
+  "scene_prompt": "NEW CHINESE TEA CULTURE POSTER. light: warm golden afternoon light streaming through bamboo blinds creating striped shadow patterns, soft volumetric steam rising from tea, gentle candle-like warm glow on wooden surfaces, intimate and contemplative mood. material: bamboo woven tray or mat, rough stone tea tray with water traces, dried persimmons or red dates as props, silk fan partially visible, clay teapot with sandy texture, wooden lattice screen in background, autumn maple leaves or osmanthus flowers scattered, warm-toned ceramic cups. color: warm amber #D4915C, bamboo green #7C9A5E, persimmon orange #E07040, clay brown #9C7050, silk cream #F5EBD8, charcoal ink #3C3C3C. composition: balanced asymmetric Eastern composition with intentional negative space on one side; hero tea or dessert item placed on stone/wood surface at golden-ratio position; warm handwritten kai headline flowing vertically or diagonally with natural brush rhythm; bamboo or lattice framing elements; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft bamboo shadow or warm gradient is fine. avoid: no cold minimalist white, no Western cafe elements, no neon colors, no industrial textures, no cartoon illustrations, no plastic/synthetic materials, no loud promotional red-yellow clash, no traditional ink-wash coldness (this is WARM new-Chinese, not cold literati).",
+  "best_for": ["brand_image", "new_product", "seasonal", "social_spread"],
+  "avoid_for": ["nightlife", "fast_food", "heavy_promotion", "western_style"],
+  "category_affinity": ["新式茶馆", "围炉煮茶", "中式甜品", "养生汤煲", "茶饮品牌", "中式糕点", "药膳", "素食", "禅意餐厅"],
+  "design_lessons": ["新中式茶饮的视觉区别于传统水墨在于'暖'和'生活感'——竹木陶石的触觉温度、柿子枫叶的季节色彩、茶烟袅袅的动态氛围共同构建当代东方美学，而非冷清的文人画意境。"]
+}

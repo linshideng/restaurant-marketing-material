@@ -1,0 +1,15 @@
+{
+  "style_id": "coastal_breeze",
+  "template_id": "style_coastal_breeze",
+  "label": "海风度假版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "小程序 Banner"],
+  "color_strategy": "ocean_breeze",
+  "composition_strategy": "airy_horizon",
+  "texture_guidance": "海盐颗粒质感、漂流木纹理、白色贝壳与珊瑚、水蓝色渐变水彩晕染、亚麻桌布、透明玻璃器皿折射光斑。",
+  "typography_profile": "modern_minimal_sans",
+  "scene_prompt": "COASTAL BREEZE SEAFOOD POSTER. light: bright natural daylight with ocean-reflected cool-blue fill, soft overcast sky diffusion, gentle golden warm accent on food surfaces, airy and open lighting feel. material: weathered driftwood table surface, white linen napkin, sea salt crystals scattered, clear glass drinkware with condensation, fresh ice with translucent melt, ceramic plates in sandy white or pale aqua, nautical rope detail, scattered small seashells. color: ocean teal #5BBCD6, sandy cream #F5E6D3, foam white #FFFFFF, sun-warm gold #E8C872, sea-glass green #8FCAB8, driftwood grey #A8A090. composition: bright airy open frame; hero food item center-right with generous negative space; subtle horizon line dividing warm sand tones below and pale sky above; headline in clean minimal sans-serif positioned center-left with comfortable breathing room; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft gradient or distant sky is fine. avoid: no dark moody backgrounds, no neon colors, no urban concrete, no heavy industrial textures, no red-gold Chinese festive elements, no crowded composition, no indoor dim restaurant atmosphere.",
+  "best_for": ["new_product", "seasonal", "brand_image", "social_spread"],
+  "avoid_for": ["nightlife", "fiery_hotpot", "festive_chinese", "heavy_industrial"],
+  "category_affinity": ["海鲜", "日料", "轻食沙拉", "地中海菜", "度假餐厅", "海边咖啡馆", "冷饮", "东南亚菜"],
+  "design_lessons": ["海风度假感的核心是大面积留白和高明度色彩营造的通透呼吸感。食材本身的鲜活水润质感（冰、水珠、透明玻璃）是最好的视觉卖点，避免过多装饰堆叠。"]
+}

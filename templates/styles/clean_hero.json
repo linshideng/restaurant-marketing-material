@@ -1,0 +1,15 @@
+{
+  "style_id": "clean_hero",
+  "template_id": "style_clean_hero",
+  "label": "白底产品主视觉",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "美食头图", "小程序 Banner"],
+  "color_strategy": "bright_clean",
+  "composition_strategy": "single_hero_center",
+  "texture_guidance": "哑光白底、浅灰阴影、干净陶瓷或金属餐具、真实食物质感。",
+  "typography_profile": "modern_minimal_sans",
+  "scene_prompt": "CLEAN HERO PRODUCT POSTER. light: large softbox light from upper left, weak fill from front, shadow falls softly to lower right, no dramatic colored light. material: matte warm-white background, ceramic plate, brushed metal spoon, natural food texture, subtle paper grain, no plastic shine. color: warm white #F8F6F0, soft grey #D8D4CC, one appetite accent from food color, Meituan yellow used only as a small brand accent. composition: one product or symbolic dish is centered or slightly lower-center, occupying 45-60% of canvas; headline sits in the top 22-28% horizontally centered or right-of-center, keeping the TOP-LEFT corner (upper 15% height × left 30% width) free of text for brand logo overlay — subtle whitespace or soft shadow there is fine; secondary info sits below the hero, no more than three text blocks. avoid: no busy restaurant background, no fake luxury, no red-gold festival props, no collage, no neon, no generic thick gold 3D type, no headline text in top-left logo zone.",
+  "best_for": ["new_product", "brand_image", "recruitment"],
+  "avoid_for": ["nightlife", "low_price_flash_sale"],
+  "category_affinity": ["西餐", "日料", "咖啡", "甜品", "茶饮", "轻食", "新品", "美食头图", "川湘菜", "云贵川菜", "云南菜", "贵州菜", "广西菜", "湖北菜", "酸菜鱼", "酸汤鱼", "藕汤", "夏季新品"],
+  "design_lessons": ["新品视觉优先让产品成为唯一记忆点，白底和留白负责提升识别效率。"]
+}

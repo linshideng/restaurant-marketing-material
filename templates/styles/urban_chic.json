@@ -1,0 +1,15 @@
+{
+  "style_id": "urban_chic",
+  "template_id": "style_urban_chic",
+  "label": "都市轻奢版",
+  "material_type": ["营销海报", "KT板", "台卡", "朋友圈海报", "短视频封面", "小程序 Banner"],
+  "color_strategy": "urban_neutral",
+  "composition_strategy": "editorial_grid",
+  "texture_guidance": "大理石台面、黄铜细节、深绿植物叶片、高级灰水泥墙、丝绒座椅面料质感、磨砂玻璃隔断。",
+  "typography_profile": "modern_minimal_sans",
+  "scene_prompt": "URBAN CHIC LIFESTYLE DINING POSTER. light: soft diffused window light from one side creating gentle shadows, warm golden accent on food surfaces, clean modern interior lighting, editorial magazine quality illumination. material: marble or terrazzo tabletop, brass/gold cutlery and accents, deep green monstera or fiddle leaf plants, cement grey wall, velvet seating fabric visible, matte ceramic dishware in charcoal or sage, linen texture details, geometric metal frames. color: warm grey #8C8C8C, deep sage green #5C7C5C, brass gold #C4A265, marble white #F5F0EB, charcoal #3D3D3D, blush accent #E8C8B8. composition: editorial magazine-style grid layout; hero dish presented on stylish surface with lifestyle context visible; clean sans-serif headline with generous tracking positioned upper-left or center; intentional negative space creating breathing room; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, clean wall or soft gradient is fine. avoid: no street-food chaos, no bright saturated primary colors, no cute cartoon elements, no traditional Chinese patterns, no neon glow, no budget/discount visual cues, no cluttered busy composition.",
+  "best_for": ["brand_image", "new_product", "social_spread", "seasonal"],
+  "avoid_for": ["budget_promotion", "street_food", "family_kids", "chinese_festive"],
+  "category_affinity": ["西餐", "Brunch", "精品咖啡", "轻食", "日式定食", "创意料理", "红酒餐吧", "城市bistro"],
+  "design_lessons": ["都市轻奢的视觉关键词是'克制的精致'——用材质质感（大理石、黄铜、丝绒）而非堆叠装饰来传递高级感。大面积留白和杂志感排版比华丽元素更显品味。"]
+}

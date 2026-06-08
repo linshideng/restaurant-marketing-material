@@ -1,0 +1,15 @@
+{
+  "style_id": "festive_red",
+  "template_id": "style_festive_red",
+  "label": "节庆红金版",
+  "material_type": ["营销海报", "KT板", "展架", "传单", "朋友圈海报"],
+  "color_strategy": "red_gold_festive",
+  "composition_strategy": "ceremonial_frame",
+  "texture_guidance": "亮朱红纸、米白留白、暖金灯笼光、轻微纸雕层次、节庆餐桌烟火气。",
+  "typography_profile": "ceremonial_embossed",
+  "scene_prompt": "FESTIVE RED COMMERCIAL POSTER. light: warm lantern light from top and side, soft golden glow behind the title, food remains bright and appetizing, no harsh nightclub neon. material: 亮朱红 textured paper, ivory paper-cut negative space, subtle gold foil edge, lantern silk, ceramic tableware, festive steam, controlled paper-cut shapes. color: 亮朱红 #E5282E, tomato red #F04438, warm gold #D8A441, ivory #FFF1D6; ivory and bright warm highlights must balance the red field, gold stays under 18% to avoid cheap shine. composition: ceremonial frame around edges occupying 10-14% border area; title centered in upper 32%; food or gathering table in lower 45%; keep middle clear for hierarchy and avoid a full dark-red flood. avoid: no western Christmas icon unless requested, no random fireworks clutter, no fake official festival logos, no excessive gold 3D text, no muddy dark red background.",
+  "best_for": ["festival", "promotion", "daily_attract"],
+  "avoid_for": ["western_minimal", "light_food", "quiet_brand"],
+  "category_affinity": ["中餐", "火锅", "宴请", "团圆宴", "烧烤", "地方菜"],
+  "design_lessons": ["中式节庆要靠层级和材质控制喜庆感，避免整张图被红金填满。"]
+}

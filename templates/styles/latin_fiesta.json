@@ -1,0 +1,15 @@
+{
+  "style_id": "latin_fiesta",
+  "template_id": "style_latin_fiesta",
+  "label": "拉美热情版",
+  "material_type": ["营销海报", "朋友圈海报", "短视频封面"],
+  "color_strategy": "latin_saturated",
+  "composition_strategy": "pattern_burst",
+  "texture_guidance": "彩绘瓷砖、热带植物、粗糙墙面、香料颗粒和节奏图案。",
+  "typography_profile": "bold_display_latin_numeric",
+  "scene_prompt": "LATIN FIESTA FOOD POSTER. light: bright afternoon sunlight from upper left, saturated wall bounce, crisp tropical shadows. material: painted tiles, rough plaster wall, woven textile, lime slices, spice dust, ceramic bowls, tropical leaves. color: terracotta #C94C2E, turquoise #008C8C, marigold #F6B331, cactus green #2F7D4A, cream #FFF0D0; keep color blocks deliberate. composition: radial or burst pattern around the food, central hero occupies 40-50%; title follows a curved or banner-like path in upper third; decorative pattern stays behind main content. avoid: no Chinese festival motifs, no ink wash, no red-gold lanterns, no generic Italian flag palette, no unauthorized cultural symbols.",
+  "best_for": ["social_spread", "new_product", "promotion"],
+  "avoid_for": ["chinese_traditional", "formal_recruitment"],
+  "category_affinity": ["墨西哥菜", "拉美菜", "东南亚菜", "融合料理", "酒吧餐"],
+  "design_lessons": ["异域风格要用材质和图案建立氛围，同时避免混用不相干文化符号。"]
+}

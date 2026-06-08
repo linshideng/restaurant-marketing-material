@@ -1,0 +1,46 @@
+{
+  "packs": [
+    {
+      "name": "春节",
+      "date_mode": "annual_mapping",
+      "dates": {"2026": "2026-02-17"},
+      "color_palette": "红金、暖黄、象牙白",
+      "elements": "灯笼、福字、红包、团圆餐桌",
+      "copy_hints": "团圆、年味、开年好礼"
+    },
+    {
+      "name": "情人节",
+      "date_mode": "fixed",
+      "month_day": "02-14",
+      "color_palette": "玫瑰粉、暗红、奶油白",
+      "elements": "双人餐桌、花束、烛光",
+      "copy_hints": "浪漫、甜蜜、双人约会"
+    },
+    {
+      "name": "端午",
+      "date_mode": "annual_mapping",
+      "dates": {"2026": "2026-06-19"},
+      "color_palette": "艾草绿、米白、暖棕",
+      "elements": "粽叶、龙舟纹样、艾草",
+      "copy_hints": "端午安康、节令尝鲜"
+    },
+    {
+      "name": "中秋",
+      "date_mode": "annual_mapping",
+      "dates": {"2026": "2026-09-25"},
+      "color_palette": "月白、桂花金、深蓝",
+      "elements": "圆月、桂花、团圆餐桌",
+      "copy_hints": "团圆、赏月、家宴"
+    },
+    {
+      "name": "国庆",
+      "date_mode": "fixed",
+      "month_day": "10-01",
+      "color_palette": "红金、暖白",
+      "elements": "飘带、烟花、节日街景",
+      "copy_hints": "假期欢聚、国庆特惠"
+    }
+  ],
+  "recommendation_window_days": 14,
+  "maintenance_note": "农历节日采用每年维护公历映射，避免 Agent 做复杂历法计算。"
+}

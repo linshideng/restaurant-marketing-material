@@ -1,0 +1,15 @@
+{
+  "style_id": "dark_premium",
+  "template_id": "style_dark_premium",
+  "label": "暗调高级版",
+  "material_type": ["营销海报", "KT板", "展架", "朋友圈海报", "短视频封面"],
+  "color_strategy": "dark_premium",
+  "composition_strategy": "spotlight_hero",
+  "texture_guidance": "深色石材、暗木、金属边缘、玻璃反光、食材湿润高光。",
+  "typography_profile": "elegant_serif_song",
+  "scene_prompt": "DARK PREMIUM DINING POSTER. light: single warm spotlight from upper right at 35 degrees, narrow highlight on hero dish, background falls into soft darkness; add subtle rim light on plate edge. material: dark stone tabletop, smoked glass, deep walnut wood, brushed metal, glossy sauce highlight, no cheap plastic. color: charcoal #111111, espresso #2A1812, warm amber #C7833A, ivory #F3E8D0, one restrained red or green accent under 8%. composition: hero dish or symbolic premium detail in lower center occupying 38-50%; large title in upper third, generous negative space around it; no more than one small badge. avoid: no noisy street scene, no full red-gold festival layout, no bright neon, no cartoon props, no overused gold 3D block title.",
+  "best_for": ["new_product", "brand_image", "membership", "festival"],
+  "avoid_for": ["children", "cheap_sale", "community_breakfast"],
+  "category_affinity": ["高端中餐", "私宴", "私房菜", "fine dining", "黑珍珠餐厅", "高端融合菜"],
+  "design_lessons": ["高级感依赖克制光比、材质细节和留白，不靠堆金色装饰。"]
+}

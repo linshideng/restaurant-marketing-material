@@ -1,0 +1,32 @@
+{
+  "type": "营销海报",
+  "size": {
+    "preset": "3:4"
+  },
+  "title": "全民运动季",
+  "store": {
+    "name": "山城热辣火锅",
+    "category": "火锅"
+  },
+  "campaign": {
+    "theme": "全民运动季",
+    "offer": "春日尝鲜 立减优惠",
+    "cta": "到店享优惠"
+  },
+  "products": [],
+  "style": {
+    "name": "美团餐饮团购",
+    "allow_ai_text": true,
+    "ai_text_role": "marketing_display"
+  },
+  "assets": {
+    "qr_code_path": "",
+    "qr_code_data_url": "",
+    "qr_code_not_needed": true,
+    "reference_images": [],
+    "food_image_not_needed": true,
+    "platform_logo": "auto",
+    "use_meituan_logo": true,
+    "mascot_mode": "official_reference"
+  }
+}

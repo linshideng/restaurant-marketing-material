@@ -1,0 +1,15 @@
+{
+  "style_id": "korean_cream",
+  "template_id": "style_korean_cream",
+  "label": "韩式奶油极简版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "短视频封面", "小程序 Banner"],
+  "color_strategy": "cream_minimal",
+  "composition_strategy": "airy_editorial",
+  "texture_guidance": "奶油色涂料墙面、拱形窗框、干花与棉花枝、透明玻璃器皿、极细线条边框、磨砂质感器皿、浅色木质托盘。",
+  "typography_profile": "elegant_thin_sans",
+  "scene_prompt": "KOREAN MINIMAL CREAM CAFE POSTER. light: soft flat overcast daylight flooding evenly through large arched windows, no harsh shadows, clean and bright with slightly warm undertone, airy open luminous atmosphere as in Korean Instagram cafes. material: smooth cream-colored painted wall as primary background, arched doorway or window frame, dried pampas grass or cotton branches in vase, transparent glass cup showing drink layers, matte ceramic in off-white or very pale grey, light birch wood tray, thin gold wire or single dried flower as accent, linen coaster. color: warm cream #F5F0E8, pale blush #F0E0D8, off-white #FAFAF5, light grey #E8E5E0, soft gold line #D4C090, muted sage #C8D0C0. composition: ultra-clean editorial layout with maximum negative space (at least 40% of canvas); single hero item placed with precision on minimal surface; elegant thin sans-serif headline with very wide letter-spacing and small point size relative to canvas; thin hairline border or single geometric frame as subtle structure; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, clean cream wall is fine. avoid: no saturated colors, no busy patterns or textures, no dark backgrounds, no bold heavy typography, no traditional Chinese elements, no street-food chaos, no multiple competing items, no decorative clutter, no glossy commercial sheen.",
+  "best_for": ["brand_image", "new_product", "social_spread", "seasonal"],
+  "avoid_for": ["heavy_promotion", "nightlife", "fiery_hotpot", "budget_deal"],
+  "category_affinity": ["韩式咖啡馆", "INS风Brunch", "极简蛋糕工作室", "花艺轻食", "奶油蛋糕", "手作甜品", "精品面包店", "设计师餐厅"],
+  "design_lessons": ["韩式奶油极简的核心是'克制到极致的温柔'——几乎无彩色的色板、大量留白、纤细字体和单一焦点。与日式极简不同，韩式更偏暖奶油调而非冷灰白。拱形窗和干花是小红书上辨识度最高的韩式空间符号。"]
+}

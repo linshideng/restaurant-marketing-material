@@ -1,0 +1,15 @@
+{
+  "style_id": "industrial_craft",
+  "template_id": "style_industrial_craft",
+  "label": "工业精酿版",
+  "material_type": ["营销海报", "KT板", "展架", "台卡", "传单", "朋友圈海报"],
+  "color_strategy": "industrial_matte",
+  "composition_strategy": "raw_structure",
+  "texture_guidance": "哑光黑铁、裸露红砖墙、水泥地面、铜管与齿轮装饰、牛皮纸标签、粉笔手写菜单板、啤酒泡沫质感。",
+  "typography_profile": "chalkboard_craft",
+  "scene_prompt": "INDUSTRIAL CRAFT BREWERY POSTER. light: warm tungsten Edison bulb pendant lighting with visible filament glow, dramatic side shadows on brick walls, copper reflections on taps and pipes, moody but inviting ambiance. material: exposed red-brown brick wall background, matte black iron fixtures, copper pipe detailing, weathered timber bar counter, kraft paper menu labels, chalkboard with hand-drawn specials, frosted beer glass with foam head, dark leather and rivets. color: brick red-brown #8B4513, matte charcoal #2D2D2D, copper gold #B87333, kraft tan #C4A35A, cream foam #FFF8DC, chalkboard dark green #2F4F4F. composition: atmospheric craft bar scene; hero beverage or food item on weathered wood surface in lower-center; tall vertical text treatment with chalkboard-style hand-lettered headline on left side; Edison bulbs or copper elements framing upper portion; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, dim brick texture or shadow area is fine. avoid: no pastel colors, no cute/kawaii elements, no floral patterns, no bright neon pink/purple, no feminine soft aesthetics, no flat illustration style, no sterile white backgrounds.",
+  "best_for": ["brand_image", "new_product", "promotion", "nightlife"],
+  "avoid_for": ["sweet_dessert", "family_kids", "feminine_tea", "chinese_festive"],
+  "category_affinity": ["精酿啤酒", "精酿酒吧", "酒吧", "牛排馆", "威士忌吧", "美式硬朗餐吧"],
+  "design_lessons": ["工业风的精髓在于材质的真实粗粝感和灯光的戏剧性对比。铜、铁、砖、木这四种材质搭配暖色钨丝灯泡光，能快速建立精酿手作的品质联想。粉笔字体增加人情味。"]
+}

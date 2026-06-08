@@ -1,0 +1,15 @@
+{
+  "style_id": "oversize_type",
+  "template_id": "style_oversize_type",
+  "label": "超大字压图版",
+  "material_type": ["营销海报", "KT板", "展架", "传单", "朋友圈海报", "短视频封面"],
+  "color_strategy": "mono_punch",
+  "composition_strategy": "type_dominant",
+  "texture_guidance": "巨型文字作为画面主体，食物图像透过字形显现或围绕文字排布；字体本身即视觉主角，配合纯色或渐变色底。",
+  "typography_profile": "ultra_display_heavy",
+  "scene_prompt": "OVERSIZE TYPOGRAPHY IMPACT DESIGN. light: even dramatic lighting on food elements visible through or around massive letterforms; subtle bright gradient on background to add depth without distraction. material: the TYPOGRAPHY itself IS the primary visual element — enormous bold characters (Chinese or numerals for price/discount) occupy 50-70% of canvas area; food imagery is either (a) clipped inside the letterforms as a texture/mask, (b) breaking out from behind the letters with parts overlapping, or (c) arranged as a supporting crown/base around the giant text. Surface: clean matte background or single bold color field. color: choose ONE high-contrast mono-punch scheme — (a) white text on bright tomato red #E53935 field with food peeking through, (b) black mega-text on golden yellow #FFD23F with food overlay, (c) tomato red text #E63946 on warm ivory #FFF1D6 with food clipped inside letters, (d) white text on warm orange #F36B21 or chili red text on light lemon yellow #FFE66D. Maximum TWO colors dominate (text color + background), food provides the third organic color. composition: TYPE-DOMINANT — the headline/offer text (usually 2-4 large characters or a big number like '5折' '¥19.9' '开业') is THE compositional anchor, sized at minimum 40% canvas width. Food elements are SECONDARY and serve to enrich the text visually. Layout is bold and confrontational — the text DEMANDS attention before anything else. Price/discount numerals can be even larger (60-80% width) for pure promotion pieces. Small supporting copy (date, address, CTA) is minimal and tucked at bottom or corner. avoid: no small decorative text, no complex multi-element compositions, no split layouts, no illustrations replacing photography, no dark moody field, no text smaller than 15% of canvas width for the main headline, no busy patterned backgrounds competing with the type.",
+  "best_for": ["promotion", "daily_attract", "social_spread", "festival"],
+  "avoid_for": ["brand_image", "premium_quiet", "light_food"],
+  "category_affinity": ["快餐", "奶茶", "火锅", "烧烤", "小吃", "面馆", "咖啡", "甜品", "炸鸡"],
+  "design_lessons": ["当文字本身成为最大视觉元素时，不需要任何分割线或复杂构图就能产生压倒性冲击力。超大字体海报在信息流中的停留率极高，特别适合价格型促销和开业活动。"]
+}

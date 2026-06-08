@@ -1,0 +1,144 @@
+{
+  "cuisine_styles": {
+    "日料": {
+      "color_keywords": "warm wood, bamboo, indigo noren, ivory ceramic",
+      "elements": "noren curtain, sushi counter, ceramic plate, bamboo leaf, paper lantern",
+      "atmosphere": "serene, precise, seasonal, restrained",
+      "compatible_tones": ["极简清冷", "复古怀旧", "清新自然", "奢华精致"]
+    },
+    "川湘菜": {
+      "color_keywords": "fresh celadon green, rice paper ivory, chili red accents, golden wok highlights, warm ceramic white",
+      "elements": "dried chili, Sichuan peppercorn, wok flame, stir-fry steam, celadon ink wash, white ceramic plates, fresh green botanical or summer water cues",
+      "atmosphere": "bright, appetite-triggering, aromatic, regional, energetic but not always dark",
+      "compatible_tones": ["热闹喜庆", "复古怀旧", "国潮中式", "清新自然"]
+    },
+    "云贵川菜": {
+      "color_keywords": "mountain green, rice paper ivory, sour soup yellow, chili red accent, warm clay",
+      "elements": "酸汤鱼, 米线, 山地雾气, 竹器, 陶碗, 鲜椒, 野菜菌菇",
+      "atmosphere": "mountain regional, fresh sour-spicy, bright, natural, appetite-triggering",
+      "compatible_tones": ["清新自然", "国潮中式", "复古怀旧", "热闹喜庆"]
+    },
+    "云南菜": {
+      "color_keywords": "mushroom brown, mountain green, flower pink, rice paper ivory, fresh chili red",
+      "elements": "菌菇、鲜花、竹器、米线、山地植物、陶碗和自然晨光",
+      "atmosphere": "fresh, botanical, mountain, seasonal, bright",
+      "compatible_tones": ["清新自然", "复古怀旧", "国潮中式"]
+    },
+    "贵州菜": {
+      "color_keywords": "sour soup yellow, chili red, bamboo green, warm ceramic white, clay brown",
+      "elements": "酸汤鱼、糟辣椒、折耳根、竹编、陶碗、苗绣纹样点缀",
+      "atmosphere": "sour-spicy, fresh, lively, regional, bright",
+      "compatible_tones": ["清新自然", "热闹喜庆", "国潮中式", "复古怀旧"]
+    },
+    "广西菜": {
+      "color_keywords": "bamboo green, rice noodle white, chili red accent, river blue-green, warm kraft",
+      "elements": "米粉、螺蛳粉、竹编、桂林山水、酸笋、青柠、陶碗",
+      "atmosphere": "regional, fresh, streetwise but bright, aromatic",
+      "compatible_tones": ["清新自然", "复古怀旧", "国潮中式", "热闹喜庆"]
+    },
+    "江西菜": {
+      "color_keywords": "pepper red, wok gold, rice paper ivory, lake green, warm wood",
+      "elements": "江西小炒、藜蒿腊肉、瓦罐、白瓷盘、锅气、辣椒和鄱阳湖水色",
+      "atmosphere": "wok-fired, bright, spicy, home-style, appetite-triggering",
+      "compatible_tones": ["热闹喜庆", "复古怀旧", "国潮中式", "清新自然"]
+    },
+    "湖北菜": {
+      "color_keywords": "lotus root ivory, lake green, soup amber, chili red accent, warm ceramic white",
+      "elements": "莲藕、藕汤、鱼糕、江湖水汽、白瓷汤碗、青绿植物",
+      "atmosphere": "fresh, river-lake regional, warm, bright, nourishing",
+      "compatible_tones": ["清新自然", "复古怀旧", "国潮中式"]
+    },
+    "火锅": {
+      "color_keywords": "broth red, warm amber, smoky black, lively table light",
+      "elements": "hot pot steam, bubbling broth, chili oil ripple, gathering table",
+      "atmosphere": "warm, social, abundant, appetite-triggering",
+      "compatible_tones": ["热闹喜庆", "国潮中式", "复古怀旧"]
+    },
+    "四川火锅": {
+      "color_keywords": "Sichuan red oil, chili red, peppercorn brown, charred black",
+      "elements": "nine-grid hotpot, red oil broth, dried chili, Sichuan peppercorn, bubbling steam",
+      "atmosphere": "spicy, bold, bustling, appetite-triggering",
+      "compatible_tones": ["热闹喜庆", "复古怀旧", "国潮中式"]
+    },
+    "重庆火锅": {
+      "color_keywords": "Sichuan red oil, deep crimson, ember orange, smoky black",
+      "elements": "nine-grid hotpot, red oil broth, chili oil ripple, old street table, rising steam",
+      "atmosphere": "fiery, streetwise, bold, social",
+      "compatible_tones": ["热闹喜庆", "复古怀旧", "国潮中式"]
+    },
+    "铜炉火锅": {
+      "color_keywords": "brass, charcoal black, sesame sauce beige, warm amber",
+      "elements": "copper hotpot, charcoal chimney, thin-sliced lamb, sesame sauce bowl, winter steam",
+      "atmosphere": "nostalgic, northern, warm, communal",
+      "compatible_tones": ["复古怀旧", "国潮中式"]
+    },
+    "潮汕牛肉火锅": {
+      "color_keywords": "clear broth ivory, beef red, ceramic white, fresh green",
+      "elements": "clear broth pot, fresh sliced beef, dipping sauce, ceramic plate, gentle steam",
+      "atmosphere": "fresh, clean, craft-focused, refined",
+      "compatible_tones": ["清新自然", "奢华精致", "复古怀旧"]
+    },
+    "粤菜": {
+      "color_keywords": "jade green, ivory, tea brown, warm gold",
+      "elements": "dim sum steamer, tea cup, Lingnan window, ceramic chopstick rest",
+      "atmosphere": "clean, elegant, refined, morning tea leisure",
+      "compatible_tones": ["极简清冷", "清新自然", "奢华精致"]
+    },
+    "咖啡甜品": {
+      "color_keywords": "butter cream, macaron pink, mocha brown, pale mint",
+      "elements": "cream swirl, dessert box, coffee cup, pearl highlights",
+      "atmosphere": "soft, sweet, polished, photo-friendly",
+      "compatible_tones": ["清新自然", "奢华精致", "复古怀旧"]
+    },
+    "烧烤": {
+      "color_keywords": "charcoal black, ember orange, spice red, kraft brown",
+      "elements": "grill marks, skewers silhouette, smoke, metal tray",
+      "atmosphere": "rugged, lively, smoky, late-night",
+      "compatible_tones": ["热闹喜庆", "复古怀旧"]
+    }
+  },
+  "city_styles": {
+    "成都烟火气": {
+      "color_keywords": "chili red, bamboo green, tea brown, warm lantern yellow",
+      "elements": "bamboo chair, covered tea bowl, alley stall, leisure teahouse",
+      "atmosphere": "leisurely, spicy, lively, neighborhood warmth",
+      "compatible_tones": ["热闹喜庆", "复古怀旧", "国潮中式"]
+    },
+    "老北京/胡同风": {
+      "color_keywords": "brick red, enamel blue, aged cream, courtyard grey",
+      "elements": "hutong alley, red lantern, enamel cup, old signboard",
+      "atmosphere": "nostalgic, familiar, neighborhood warmth",
+      "compatible_tones": ["复古怀旧", "国潮中式"]
+    },
+    "广府岭南风": {
+      "color_keywords": "jade green, warm ivory, tea gold, arcade grey",
+      "elements": "qilou arcade, morning tea table, ceramic tile, dim sum steamer",
+      "atmosphere": "relaxed, refined, tea-house elegance",
+      "compatible_tones": ["清新自然", "奢华精致", "复古怀旧"]
+    },
+    "港式复古": {
+      "color_keywords": "neon magenta, deep teal, tiled cream, chrome",
+      "elements": "cha chaan teng booth, neon sign glow, checkered tile, menu board",
+      "atmosphere": "retro, cinematic, lively, urban",
+      "compatible_tones": ["复古怀旧", "热闹喜庆"]
+    },
+    "广西少数民族风情": {
+      "color_keywords": "indigo blue, silver ornament, bamboo green, rice terrace gold",
+      "elements": "terraced rice fields, bamboo house, embroidered fabric, bronze drum, rice noodle stall",
+      "atmosphere": "ethnic, natural, warm, mountain village charm",
+      "compatible_tones": ["清新自然", "复古怀旧", "国潮中式"]
+    },
+    "西北古道风": {
+      "color_keywords": "desert sand, terracotta, deep blue sky, lamb-fat white",
+      "elements": "clay oven, sheepskin raft, silk road motif, hand-pulled noodle counter, brick arch",
+      "atmosphere": "rugged, vast, hearty, frontier warmth",
+      "compatible_tones": ["复古怀旧", "热闹喜庆"]
+    },
+    "东北大碗风": {
+      "color_keywords": "snow white, iron pot black, corn gold, red window frame",
+      "elements": "iron pot stew, kang table, floral curtain, enamel basin, steam cloud",
+      "atmosphere": "generous, homey, hearty, winter warmth",
+      "compatible_tones": ["热闹喜庆", "复古怀旧"]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "layout_modes": {
+    "info_card": {
+      "portrait": {
+        "ai_text_region": [0.08, 0.12, 0.84, 0.36],
+        "overlay_backdrop_region": [0.00, 0.62, 1.00, 0.38],
+        "overlay_text_region": [0.08, 0.66, 0.84, 0.26],
+        "qr_region": [0.68, 0.69, 0.22, 0.22],
+        "disclaimer_region": [0.62, 0.94, 0.34, 0.04],
+        "padding_ratio": 0.035,
+        "font_size_ratio": {"max": 0.030, "min": 0.017},
+        "line_gap_ratio": 0.010
+      },
+      "square": {
+        "ai_text_region": [0.08, 0.10, 0.84, 0.38],
+        "overlay_backdrop_region": [0.00, 0.60, 1.00, 0.40],
+        "overlay_text_region": [0.08, 0.65, 0.84, 0.27],
+        "qr_region": [0.70, 0.66, 0.21, 0.21],
+        "disclaimer_region": [0.58, 0.94, 0.38, 0.04],
+        "padding_ratio": 0.035,
+        "font_size_ratio": {"max": 0.032, "min": 0.018},
+        "line_gap_ratio": 0.010
+      },
+      "landscape": {
+        "ai_text_region": [0.06, 0.12, 0.48, 0.40],
+        "overlay_backdrop_region": [0.00, 0.60, 1.00, 0.40],
+        "overlay_text_region": [0.08, 0.66, 0.66, 0.24],
+        "qr_region": [0.80, 0.64, 0.14, 0.24],
+        "disclaimer_region": [0.70, 0.93, 0.26, 0.05],
+        "padding_ratio": 0.026,
+        "font_size_ratio": {"max": 0.030, "min": 0.016},
+        "line_gap_ratio": 0.010
+      }
+    },
+    "coupon_card": {
+      "portrait": {
+        "ai_text_region": [0.08, 0.10, 0.84, 0.39],
+        "overlay_backdrop_region": [0.00, 0.60, 1.00, 0.40],
+        "overlay_text_region": [0.08, 0.65, 0.53, 0.27],
+        "qr_region": [0.70, 0.67, 0.22, 0.22],
+        "disclaimer_region": [0.60, 0.94, 0.36, 0.04],
+        "padding_ratio": 0.032,
+        "font_size_ratio": {"max": 0.030, "min": 0.016},
+        "line_gap_ratio": 0.009
+      },
+      "square": {
+        "ai_text_region": [0.08, 0.09, 0.84, 0.39],
+        "overlay_backdrop_region": [0.00, 0.60, 1.00, 0.40],
+        "overlay_text_region": [0.08, 0.65, 0.54, 0.27],
+        "qr_region": [0.70, 0.66, 0.22, 0.22],
+        "disclaimer_region": [0.58, 0.94, 0.38, 0.04],
+        "padding_ratio": 0.032,
+        "font_size_ratio": {"max": 0.031, "min": 0.017},
+        "line_gap_ratio": 0.009
+      },
+      "landscape": {
+        "ai_text_region": [0.06, 0.12, 0.52, 0.38],
+        "overlay_backdrop_region": [0.00, 0.58, 1.00, 0.42],
+        "overlay_text_region": [0.07, 0.65, 0.64, 0.24],
+        "qr_region": [0.80, 0.63, 0.14, 0.25],
+        "disclaimer_region": [0.70, 0.93, 0.26, 0.05],
+        "padding_ratio": 0.026,
+        "font_size_ratio": {"max": 0.029, "min": 0.015},
+        "line_gap_ratio": 0.009
+      }
+    },
+    "notice_panel": {
+      "portrait": {
+        "ai_text_region": [0.08, 0.10, 0.84, 0.34],
+        "overlay_backdrop_region": [0.00, 0.56, 1.00, 0.44],
+        "overlay_text_region": [0.07, 0.61, 0.86, 0.31],
+        "qr_region": [0.70, 0.68, 0.22, 0.22],
+        "disclaimer_region": [0.60, 0.94, 0.36, 0.04],
+        "padding_ratio": 0.032,
+        "font_size_ratio": {"max": 0.027, "min": 0.015},
+        "line_gap_ratio": 0.008
+      },
+      "square": {
+        "ai_text_region": [0.08, 0.09, 0.84, 0.34],
+        "overlay_backdrop_region": [0.00, 0.56, 1.00, 0.44],
+        "overlay_text_region": [0.07, 0.61, 0.86, 0.31],
+        "qr_region": [0.70, 0.66, 0.22, 0.22],
+        "disclaimer_region": [0.58, 0.94, 0.38, 0.04],
+        "padding_ratio": 0.032,
+        "font_size_ratio": {"max": 0.028, "min": 0.016},
+        "line_gap_ratio": 0.008
+      },
+      "landscape": {
+        "ai_text_region": [0.06, 0.10, 0.50, 0.38],
+        "overlay_backdrop_region": [0.00, 0.56, 1.00, 0.44],
+        "overlay_text_region": [0.07, 0.62, 0.66, 0.27],
+        "qr_region": [0.80, 0.62, 0.14, 0.25],
+        "disclaimer_region": [0.70, 0.93, 0.26, 0.05],
+        "padding_ratio": 0.026,
+        "font_size_ratio": {"max": 0.027, "min": 0.014},
+        "line_gap_ratio": 0.008
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "style_id": "natural_earth",
+  "template_id": "style_natural_earth",
+  "label": "自然大地版",
+  "material_type": ["营销海报", "KT板", "台卡", "美食头图", "小程序 Banner"],
+  "color_strategy": "earth_natural",
+  "composition_strategy": "organic_layered",
+  "texture_guidance": "亚麻、陶土、木纹、植物叶片、晨光和真实食材纹理。",
+  "typography_profile": "organic_humanist_sans",
+  "scene_prompt": "NATURAL EARTH FRESH POSTER. light: morning window light from upper left, soft leaf shadow across table, warm fill from front, no studio flash. material: linen cloth, unglazed ceramic, light wood, woven basket, herbs, leaves, natural food texture, breathable air. color: sage #8FAE8B, oat #E9DCC5, clay #B97855, warm ivory #FFF7EA, small fresh green accent. composition: layered organic arrangement with hero dish in lower middle occupying 40-50%; headline sits in the upper-center area (horizontally centered or right-of-center, starting BELOW 15% from top) keeping the TOP-LEFT corner (upper 15% height × left 30% width) free of text for brand logo overlay — soft leaf shadows or gentle light are fine there; botanical foreground frames one side only. avoid: no red-black spicy palette, no neon, no metallic luxury, no crowded market background, no fake perfect plastic vegetables, no headline text in top-left logo zone.",
+  "best_for": ["new_product", "brand_image", "daily_attract", "recruitment"],
+  "avoid_for": ["nightlife", "fiery_hotpot", "flash_sale"],
+  "category_affinity": ["轻食", "沙拉", "素食", "健康餐", "咖啡简餐", "茶饮", "川湘菜", "云贵川菜", "云南菜", "贵州菜", "广西菜", "湖北菜", "酸菜鱼", "酸汤鱼", "藕汤", "米粉", "藤椒鱼", "夏季菜"],
+  "design_lessons": ["自然感来自光线和材质可信度，不是简单铺绿色背景。"]
+}

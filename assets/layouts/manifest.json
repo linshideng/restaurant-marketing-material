@@ -1,0 +1,104 @@
+{
+  "layouts": [
+    {
+      "id": "layout_a",
+      "name": "大字冲击型",
+      "material_types": ["营销海报", "KT板", "展架", "传单"],
+      "ratio": ["portrait", "square"],
+      "requires_qr": false,
+      "prefers_qr": true,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["big_type_impact"]
+    },
+    {
+      "id": "layout_b",
+      "name": "场景沉浸型",
+      "material_types": ["营销海报", "KT板", "展架"],
+      "ratio": ["portrait", "landscape", "square"],
+      "requires_qr": false,
+      "prefers_qr": true,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["scene_immersive"]
+    },
+    {
+      "id": "layout_c",
+      "name": "扫码转化型",
+      "material_types": ["台卡", "传单", "营销海报"],
+      "ratio": ["portrait", "square"],
+      "requires_qr": true,
+      "prefers_qr": true,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["qr_conversion"]
+    },
+    {
+      "id": "layout_d",
+      "name": "菜品英雄型",
+      "material_types": ["营销海报", "KT板", "传单"],
+      "ratio": ["portrait", "landscape", "square"],
+      "requires_qr": false,
+      "prefers_qr": true,
+      "prefers_food_image": true,
+      "variant_tie_breaker": ["scene_immersive"]
+    },
+    {
+      "id": "layout_e",
+      "name": "活动信息型",
+      "material_types": ["传单", "KT板", "营销海报"],
+      "ratio": ["portrait", "landscape", "square"],
+      "requires_qr": false,
+      "prefers_qr": true,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["big_type_impact"]
+    },
+    {
+      "id": "layout_f",
+      "name": "简约台卡型",
+      "material_types": ["台卡"],
+      "ratio": ["portrait", "square", "landscape"],
+      "requires_qr": true,
+      "prefers_qr": true,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["qr_conversion"]
+    },
+    {
+      "id": "layout_g",
+      "name": "美食头图型",
+      "material_types": ["美食头图"],
+      "ratio": ["square"],
+      "requires_qr": false,
+      "prefers_qr": false,
+      "prefers_food_image": true,
+      "variant_tie_breaker": ["bold_fiery", "pastel_dream", "organic_garden"]
+    },
+    {
+      "id": "layout_h",
+      "name": "短视频封面型",
+      "material_types": ["短视频封面", "朋友圈海报"],
+      "ratio": ["portrait"],
+      "requires_qr": false,
+      "prefers_qr": false,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["youthful_buzz", "festive_prosperity", "urban_chic"]
+    },
+    {
+      "id": "layout_i",
+      "name": "小程序 Banner 型",
+      "material_types": ["小程序 Banner"],
+      "ratio": ["landscape"],
+      "requires_qr": false,
+      "prefers_qr": false,
+      "prefers_food_image": false,
+      "variant_tie_breaker": ["urban_chic", "bustling_warmth", "organic_garden"]
+    },
+    {
+      "id": "layout_panorama",
+      "name": "五连图长画布连贯型",
+      "material_types": ["五连图"],
+      "ratio": ["ultra_wide"],
+      "requires_qr": false,
+      "prefers_qr": false,
+      "prefers_food_image": true,
+      "variant_tie_breaker": []
+    }
+  ]
+}

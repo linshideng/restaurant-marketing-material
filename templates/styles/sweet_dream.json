@@ -1,0 +1,15 @@
+{
+  "style_id": "sweet_dream",
+  "template_id": "style_sweet_dream",
+  "label": "甜梦少女版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "小程序 Banner"],
+  "color_strategy": "pastel_candy",
+  "composition_strategy": "dreamy_layered_3d",
+  "texture_guidance": "奶油裱花质感、马卡龙光滑表面、珍珠光泽、粉紫渐变云朵、糖霜饼干立体文字、亮片气泡。",
+  "typography_profile": "sweet_cookie_3d",
+  "scene_prompt": "SWEET DREAM GIRL DESSERT POSTER. light: soft diffused pink-purple gradient ambient from top, pearlescent rim highlights on every element, gentle volumetric god rays through cotton-candy clouds, no harsh shadow. material: glossy cream frosting swirls, macaron shells, pearl beads scattered, translucent candy bubbles, satin ribbon, rose-gold metallic accents, fondant texture on 3D text, whipped cream peaks, pastel gift boxes with dripping icing. color: blush pink #F5B5C8, lavender #D4B5E8, cream ivory #FFF5E6, soft peach #FFDAB5, mint accent #C8E8D5, pearl white highlights. composition: 3D rendered miniature diorama; headline occupies left 55% of canvas as large bold 3D cookie-frosting textured Chinese characters with dark berry-red fill and cream icing outline; QR or product placed on right side on a decorative stand/easel; dreamy clouds and floating dessert elements fill background; the TOP-LEFT CORNER (upper 15% height, left 30% width) should stay free of text and dense elements for brand logo overlay — subtle background decorations like soft gradient, distant bubbles or gentle bokeh are fine. avoid: no dark moody lighting, no industrial textures, no red-black spicy palette, no realistic restaurant interior, no masculine rugged aesthetics, no flat 2D illustration style, no crowded text overlapping hero elements.",
+  "best_for": ["new_product", "promotion", "social_spread", "festival"],
+  "avoid_for": ["nightlife", "fiery_hotpot", "premium_formal", "masculine_bbq"],
+  "category_affinity": ["甜品", "蛋糕", "奶茶", "茶饮", "冰淇淋", "烘焙", "咖啡甜品", "下午茶", "少女风", "亲子"],
+  "design_lessons": ["甜品类物料的视觉信任来自质感真实的奶油和马卡龙材质渲染，3D 立体文字需要用饼干/糖霜纹理而非普通描边来营造甜蜜感。珍珠和气泡是低成本提升梦幻氛围的有效元素。"]
+}

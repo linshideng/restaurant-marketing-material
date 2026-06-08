@@ -1,0 +1,15 @@
+{
+  "style_id": "family_joy",
+  "template_id": "style_family_joy",
+  "label": "家庭欢乐版",
+  "material_type": ["营销海报", "KT板", "台卡", "传单", "朋友圈海报", "小程序 Banner"],
+  "color_strategy": "cheerful_warm",
+  "composition_strategy": "playful_scatter",
+  "texture_guidance": "彩色气球、纸质三角旗、圆点波点、卡通贴纸装饰、木质餐盘、暖色格纹桌布、儿童涂鸦线条。",
+  "typography_profile": "playful_bubble_display",
+  "scene_prompt": "FAMILY JOY DINING POSTER. light: bright cheerful overhead natural light mixed with warm indoor ambient, soft even fill with no harsh shadows, friendly and inviting sunny atmosphere. material: colorful party bunting flags, round balloons in primary colors, polka dot tablecloth or napkins, wooden serving boards, cartoon sticker decorations, crayon doodle accents, confetti scattered, friendly plate arrangements. color: sunshine yellow #FFD93D, cherry red #FF6B6B, sky blue #74B9FF, grass green #6BCB77, warm orange #FFA94D, soft white #FFFCF0. composition: energetic but organized layout; multiple food items arranged in a playful scattered pattern suggesting abundance and choice; bold bubbly headline text centered or slightly upper; party decoration elements (bunting, balloons) framing the top and sides; the TOP-LEFT CORNER (upper 15% height, left 30% width) reserved for brand logo — keep free of text and busy elements, soft solid color or gentle bunting edge is fine. avoid: no dark moody lighting, no alcohol/bar imagery, no minimalist cold aesthetics, no luxury premium restraint, no nightlife neon, no single-item hero composition, no spicy aggressive red-black.",
+  "best_for": ["family_meal", "promotion", "festival", "new_product"],
+  "avoid_for": ["premium_formal", "nightlife", "masculine_bbq", "minimalist_brand"],
+  "category_affinity": ["亲子餐厅", "家庭聚餐", "自助餐", "披萨", "快餐", "儿童套餐", "生日派对", "火锅家庭套餐"],
+  "design_lessons": ["家庭欢乐感的营造靠高饱和度多色搭配和派对道具元素。食物要展现分量感和多样性（而非单品精致），传递'一家人吃得开心'的情绪。泡泡字体增加童趣亲和力。"]
+}

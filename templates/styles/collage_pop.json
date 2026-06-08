@@ -1,0 +1,15 @@
+{
+  "style_id": "collage_pop",
+  "template_id": "style_collage_pop",
+  "label": "拼贴波普版",
+  "material_type": ["营销海报", "传单", "朋友圈海报", "短视频封面"],
+  "color_strategy": "pop_clash",
+  "composition_strategy": "dense_collage",
+  "texture_guidance": "paper cut edges、stickers、tape strips、halftone dots、错位色块和手撕纸纹。",
+  "typography_profile": "retro_pixel_display",
+  "scene_prompt": "COLLAGE POP SOCIAL POSTER. light: flat studio light with minimal realistic shadow, each paper piece casts only a tiny 2-4px contact shadow; avoid cinematic depth. material: paper cut edges, stickers, tape strips, halftone dots, marker strokes, torn receipt scraps, printed coupon shapes. color: vivid tomato red #F04438, electric blue #2563EB, lime #A3E635, cream #FFF3D6; use 3 dominant colors only, no muddy gradients. composition: dense collage layout with 5-8 layered graphic pieces; main title sits on a tilted sticker occupying 25-32% of canvas; food cue is a cutout or simplified photo-card occupying 35-45%. avoid: no realistic restaurant scene, no luxury lighting, no 3D diorama, no symmetrical corporate poster, no uncontrolled clutter beyond planned paper layers.",
+  "best_for": ["promotion", "social_spread", "festival"],
+  "avoid_for": ["premium_brand", "formal_recruitment"],
+  "category_affinity": ["快餐", "茶饮", "小吃", "炸鸡", "汉堡", "年轻人活动"],
+  "design_lessons": ["社交传播的抓眼点来自可截图的图形层次，而不是单纯加饱和度。"]
+}

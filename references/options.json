@@ -1,0 +1,271 @@
+{
+  "material_types": [
+    {
+      "label": "营销海报",
+      "value": "营销海报",
+      "description": "线上/门店通用促销海报",
+      "scene": "朋友圈/社群扩散、门店活动、线上投放",
+      "recommended_size": "3:4",
+      "scene_affinity": ["堂食引流", "节日营销", "新店开业", "品牌宣传"]
+    },
+    {
+      "label": "KT板",
+      "value": "KT板",
+      "description": "门店入口、收银台、活动点位展示",
+      "scene": "门店内展示、活动现场、收银台附近",
+      "recommended_size": "4:3",
+      "scene_affinity": ["堂食引流", "门店活动", "新品上市"]
+    },
+    {
+      "label": "展架/易拉宝",
+      "value": "展架",
+      "description": "门店外摆或过道远距离吸引（易拉宝推荐 2:5 比例）",
+      "scene": "门店入口、商场过道、展会站台",
+      "recommended_size": "2:5",
+      "scene_affinity": ["堂食引流", "新店开业", "节日营销"]
+    },
+    {
+      "label": "台卡",
+      "value": "台卡",
+      "description": "桌面扫码、点餐、套餐推荐",
+      "scene": "桌面摆放、扫码点餐、套餐推荐",
+      "recommended_size": "4:3",
+      "scene_affinity": ["桌面转化", "套餐推荐", "会员引导"]
+    },
+    {
+      "label": "传单",
+      "value": "传单",
+      "description": "派发、外带、社区触达",
+      "scene": "线下派发、外卖袋夹带、社区触达",
+      "recommended_size": "2:3",
+      "scene_affinity": ["社区触达", "新店开业", "外卖转化"]
+    },
+    {
+      "label": "美食头图",
+      "value": "美食头图",
+      "description": "美食平台列表/店铺头图，强调小尺寸识别",
+      "scene": "外卖转化、线上点单",
+      "recommended_size": "1:1",
+      "scene_affinity": ["外卖转化"],
+      "composition_rule": "超大主体、极简背景、无 QR、避免小字"
+    },
+    {
+      "label": "朋友圈海报",
+      "value": "朋友圈海报",
+      "description": "社交渠道传播长图",
+      "scene": "朋友圈/社群扩散、节日营销",
+      "recommended_size": "9:16",
+      "scene_affinity": ["社交种草", "节日营销", "品牌宣传"]
+    },
+    {
+      "label": "短视频封面",
+      "value": "短视频封面",
+      "description": "抖音/快手/视频号封面，需保留标题安全区和底部遮挡区",
+      "scene": "短视频内容分发、达人种草",
+      "recommended_size": "9:16",
+      "scene_affinity": ["社交种草", "新品上市", "品牌宣传"],
+      "composition_rule": "顶部标题安全区、底部操作栏避让、主视觉居中偏上"
+    },
+    {
+      "label": "小程序 Banner",
+      "value": "小程序 Banner",
+      "description": "小程序/店铺页横幅",
+      "scene": "线上店铺承接、活动入口",
+      "recommended_size": "16:9",
+      "scene_affinity": ["外卖转化", "节日营销", "会员引导"]
+    },
+    {
+      "label": "五连图",
+      "value": "五连图",
+      "description": "线上门店装修五连图，以五张连续图片组合展示招牌菜品和门店特色",
+      "scene": "商户通门店主页高曝光装修位",
+      "recommended_size": "20:3",
+      "scene_affinity": ["品牌宣传", "堂食引流", "新品上市"],
+      "composition_rule": "连续长画布，前50%为核心高曝光区，模型自主编排实拍融入、菜品布局和画面节奏"
+    }
+  ],
+  "sizes": [
+    {"label": "自定义宽高像素（如 1242×1660px）", "value": "custom_px"},
+    {"label": "五连图 20:3 (10240×1536)", "value": "20:3"},
+    {"label": "方版 1:1", "value": "1:1"},
+    {"label": "竖版 2:3", "value": "2:3"},
+    {"label": "竖版 2:5 (易拉宝)", "value": "2:5"},
+    {"label": "竖版 3:4", "value": "3:4"},
+    {"label": "竖版 4:5", "value": "4:5"},
+    {"label": "竖版 9:16", "value": "9:16"},
+    {"label": "横版 3:2", "value": "3:2"},
+    {"label": "横版 4:3", "value": "4:3"},
+    {"label": "横版 5:4", "value": "5:4"},
+    {"label": "横版 16:9", "value": "16:9"}
+  ],
+  "design_styles": [
+    {
+      "id": "clean_hero",
+      "label": "白底产品主视觉",
+      "description": "干净留白、单一主菜、真实材质、适合新品和品牌形象",
+      "color_strategy": "bright_clean",
+      "composition_strategy": "single_hero_center"
+    },
+    {
+      "id": "dark_premium",
+      "label": "暗调高级质感",
+      "description": "深色背景、单点光、金属和石材质感，适合明确高端暗调、私宴和精致餐饮宣传；通用餐饮默认优先明亮开胃",
+      "color_strategy": "dark_premium",
+      "composition_strategy": "cinematic_focus"
+    },
+    {
+      "id": "natural_earth",
+      "label": "自然大地风",
+      "description": "植物、木质、陶土和晨光，适合健康、田园、地方食材",
+      "color_strategy": "earth_natural",
+      "composition_strategy": "organic_tabletop"
+    },
+    {
+      "id": "bold_split",
+      "label": "强冲击分割版",
+      "description": "番茄红、暖橙、奶油白等明亮高对比色块，斜向分割、热气与硬边色块，适合促销引流",
+      "color_strategy": "high_contrast_warm",
+      "composition_strategy": "split_hero"
+    },
+    {
+      "id": "collage_pop",
+      "label": "拼贴波普版",
+      "description": "纸张拼贴、贴纸、胶带、网点和价格牌，适合社交传播",
+      "color_strategy": "pop_bright",
+      "composition_strategy": "collage_full"
+    },
+    {
+      "id": "street_warm",
+      "label": "烟火街头暖光",
+      "description": "街巷暖光、蒸汽、市井桌椅和招牌，适合日常到店引流",
+      "color_strategy": "street_warm",
+      "composition_strategy": "immersive_scene"
+    },
+    {
+      "id": "neon_night",
+      "label": "霓虹夜场版",
+      "description": "深夜霓虹、湿润反光、吧台和城市夜色，适合夜宵和社交活动",
+      "color_strategy": "dark_neon",
+      "composition_strategy": "night_depth"
+    },
+    {
+      "id": "festive_red",
+      "label": "节庆红金版",
+      "description": "亮朱红、暖金、米白留白、灯笼和祥瑞纹样，适合中式节日活动",
+      "color_strategy": "red_gold_festive",
+      "composition_strategy": "ceremonial_layered"
+    },
+    {
+      "id": "illustration_flat",
+      "label": "扁平插画版",
+      "description": "纯色块、矢量插画、无摄影质感，适合轻松节日和亲和传播",
+      "color_strategy": "flat_playful",
+      "composition_strategy": "graphic_grid"
+    },
+    {
+      "id": "ink_oriental",
+      "label": "水墨东方版",
+      "description": "宣纸、水墨、庭院雾气和克制留白，适合中式品牌形象",
+      "color_strategy": "ink_neutral",
+      "composition_strategy": "asymmetric_whitespace"
+    },
+    {
+      "id": "retro_poster",
+      "label": "复古招贴版",
+      "description": "旧报纸、套印颗粒、边框标题和怀旧色调，适合日常引流",
+      "color_strategy": "retro_muted",
+      "composition_strategy": "poster_frame"
+    },
+    {
+      "id": "latin_fiesta",
+      "label": "拉丁热带风",
+      "description": "花砖、热带植物、香料色和节奏感图案，适合拉美、东南亚等非中式风味",
+      "color_strategy": "tropical_warm",
+      "composition_strategy": "pattern_fiesta"
+    },
+    {
+      "id": "sweet_dream",
+      "label": "甜梦少女版",
+      "description": "粉紫奶油、3D马卡龙质感、珍珠气泡、糖霜饼干立体文字，适合甜品、烘焙、奶茶等少女风营销",
+      "color_strategy": "pastel_candy",
+      "composition_strategy": "dreamy_layered_3d"
+    },
+    {
+      "id": "coastal_breeze",
+      "label": "海风度假版",
+      "description": "海盐清透、漂流木与贝壳、水蓝渐变和明亮通透感，适合海鲜、日料、地中海等清爽餐饮",
+      "color_strategy": "ocean_breeze",
+      "composition_strategy": "airy_horizon"
+    },
+    {
+      "id": "industrial_craft",
+      "label": "工业精酿版",
+      "description": "红砖铜管、Edison灯泡、黑铁粉笔菜单板，适合精酿、酒吧、牛排馆等明确硬朗手作餐饮",
+      "color_strategy": "industrial_matte",
+      "composition_strategy": "raw_structure"
+    },
+    {
+      "id": "family_joy",
+      "label": "家庭欢乐版",
+      "description": "彩色气球、三角旗、波点和涂鸦，适合亲子餐厅、家庭聚餐、自助和生日派对",
+      "color_strategy": "cheerful_warm",
+      "composition_strategy": "playful_scatter"
+    },
+    {
+      "id": "urban_chic",
+      "label": "都市轻奢版",
+      "description": "大理石黄铜、深绿植物、杂志感排版和克制留白，适合西餐Brunch、精品咖啡和创意料理",
+      "color_strategy": "urban_neutral",
+      "composition_strategy": "editorial_grid"
+    },
+    {
+      "id": "poetic_leisure",
+      "label": "诗意闲适版",
+      "description": "棉麻干花、水彩晕染、陶器和旧书页，适合茶馆、花艺餐厅、独立咖啡馆等慢生活餐饮",
+      "color_strategy": "muted_poetic",
+      "composition_strategy": "gentle_float"
+    },
+    {
+      "id": "zen_tea_modern",
+      "label": "新中式茶饮版",
+      "description": "竹木石陶、柿子枫叶、团扇茶烟和暖调东方美学，适合新式茶馆、围炉煮茶、中式糕点",
+      "color_strategy": "warm_zen",
+      "composition_strategy": "balanced_eastern"
+    },
+    {
+      "id": "outdoor_picnic",
+      "label": "露营野餐版",
+      "description": "格纹布草地、藤编篮、牛皮纸袋和自然光斑，适合露营餐吧、野餐下午茶、农庄和City Walk集市",
+      "color_strategy": "fresh_outdoor",
+      "composition_strategy": "casual_flatlay"
+    },
+    {
+      "id": "cyber_gaming",
+      "label": "赛博电竞版",
+      "description": "深紫电蓝、故障纹理、HUD界面和全息渐变，适合明确电竞餐饮、游戏主题餐厅、科幻概念店",
+      "color_strategy": "cyber_neon",
+      "composition_strategy": "glitch_dynamic"
+    },
+    {
+      "id": "korean_cream",
+      "label": "韩式奶油极简版",
+      "description": "奶油色墙面、拱形窗、干花纤细字体和极致留白，适合韩式咖啡馆、INS风Brunch、极简蛋糕工作室",
+      "color_strategy": "cream_minimal",
+      "composition_strategy": "airy_editorial"
+    },
+    {
+      "id": "dynamic_angle",
+      "label": "动感斜角版",
+      "description": "倾斜构图、运动轨迹、双色对撞和速度感，适合年轻化快餐、面馆和街头小吃促销",
+      "color_strategy": "bold_duo_contrast",
+      "composition_strategy": "tilted_dynamic"
+    },
+    {
+      "id": "oversize_type",
+      "label": "超大字压图版",
+      "description": "巨型文字占据画面主体、食物透过字形显现，纯粹用字体重量制造冲击力，适合价格促销和开业活动",
+      "color_strategy": "mono_punch",
+      "composition_strategy": "type_dominant"
+    }
+  ]
+}

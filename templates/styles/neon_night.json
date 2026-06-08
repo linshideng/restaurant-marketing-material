@@ -1,0 +1,15 @@
+{
+  "style_id": "neon_night",
+  "template_id": "style_neon_night",
+  "label": "霓虹夜场版",
+  "material_type": ["营销海报", "朋友圈海报", "短视频封面", "展架"],
+  "color_strategy": "dark_neon",
+  "composition_strategy": "night_depth",
+  "texture_guidance": "湿润街面反光、霓虹灯牌、暗木吧台、玻璃和蒸汽。",
+  "typography_profile": "neon_sign_display",
+  "scene_prompt": "NEON NIGHT DINING POSTER. light: magenta-blue neon from right side, warm table lamp from lower left, reflections on wet street or glossy counter, deep background depth. material: dark wood, wet pavement reflection, glass, metal stool, rising steam, soft haze, small neon sign shapes without readable random text. color: near black #0B0D12, neon magenta #E83E8C, cyan #1DB7C9, amber #F0A94A; keep yellow as tiny accent. composition: foreground food or drink in lower 45%, neon depth corridor behind it, title sits in top third with glowing outline but readable; leave one dark quiet zone for contrast. avoid: no daytime natural light, no red-gold festival, no two deep dark styles paired together, no unauthorized nightlife brand logos.",
+  "best_for": ["promotion", "social_spread", "daily_attract"],
+  "avoid_for": ["children", "breakfast", "fresh_light_food"],
+  "category_affinity": ["夜宵", "烧烤", "酒馆", "居酒屋", "精酿", "小酒馆"],
+  "design_lessons": ["夜场风要有深度和光源逻辑，否则会变成普通暗色海报。"]
+}

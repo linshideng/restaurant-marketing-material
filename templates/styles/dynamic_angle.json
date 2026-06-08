@@ -1,0 +1,15 @@
+{
+  "style_id": "dynamic_angle",
+  "template_id": "style_dynamic_angle",
+  "label": "动感斜角版",
+  "material_type": ["营销海报", "KT板", "展架", "传单", "短视频封面"],
+  "color_strategy": "bold_duo_contrast",
+  "composition_strategy": "tilted_dynamic",
+  "texture_guidance": "倾斜食物摆盘、动态运动轨迹、斜置容器带出汁液流动感、速度模糊边缘、有角度的光影切面。",
+  "typography_profile": "heavy_impact_sans",
+  "scene_prompt": "DYNAMIC ANGLE IMPACT DESIGN. light: dramatic cross-lighting from two opposing directions (upper-left warm + lower-right cool) creating strong chiaroscuro; motion-blur on non-focal elements to enhance speed sensation. material: food shot from a tilted/Dutch angle (15-25 degree canvas tilt), sauce pouring mid-air, chopsticks lifting noodles with steam trailing, wok toss frozen mid-flip; surface textures of rough stone, brushed metal, or scorched wood; no static flat-lay feeling. color: choose ONE bold duo-tone palette per generation — (a) electric red #D62828 + jet black #0D0D0D, (b) saffron yellow #F7B32B + midnight navy #1B1B3A, (c) lime green #5FD35F + volcanic gray #2D2D2D; secondary accent below 10% canvas. composition: TILTED DYNAMIC — the entire composition sits at a 10-20 degree rotational tilt, creating inherent motion and tension. Hero food element placed at a dynamic intersection (rule-of-thirds power point but rotated), 45-55% of canvas. Title text follows the tilt angle or contrasts it at perpendicular, set in ultra-bold condensed sans-serif at large scale. Supporting elements (price tag, badge, CTA) float at opposing angles. The design should feel like it's MOVING, not resting. avoid: no centered symmetric layouts, no horizontal calm baselines, no split-screen composition, no delicate thin fonts, no muted earth tones, no whitespace-heavy minimal approach.",
+  "best_for": ["promotion", "social_spread", "daily_attract", "new_product"],
+  "avoid_for": ["brand_image", "premium_quiet", "zen_calm", "traditional_formal"],
+  "category_affinity": ["面馆", "拉面", "烧烤", "快餐", "炸鸡", "汉堡", "奶茶", "小吃", "串串", "烤鱼", "川湘菜", "广西菜", "江西菜", "湖北菜", "小炒肉", "江西小炒", "辣子鸡", "剁椒鱼头", "螺蛳粉"],
+  "design_lessons": ["倾斜构图打破视觉惯性，让静态画面产生运动感和紧迫感，特别适合快节奏、年轻化的促销场景。不需要分割线就能制造强烈冲击力。"]
+}

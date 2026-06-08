@@ -1,0 +1,15 @@
+{
+  "style_id": "retro_poster",
+  "template_id": "style_retro_poster",
+  "label": "复古招贴版",
+  "material_type": ["营销海报", "KT板", "展架", "传单", "朋友圈海报"],
+  "color_strategy": "retro_warm",
+  "composition_strategy": "poster_grid",
+  "texture_guidance": "旧纸、网点印刷、搪瓷、木门头、微褪色油墨。",
+  "typography_profile": "retro_mincho_display",
+  "scene_prompt": "RETRO PRINT POSTER. light: warm late-afternoon side light from left, soft vignette around corners, no modern studio shine. material: aged paper grain, offset print dots, enamel cup, old wooden sign, faded ink, ceramic bowl, neighborhood storefront texture. color: faded teal #4F8A8B, brick red #A6422A, aged cream #EFE0C2, dark brown #3A2418; colors should look printed, not neon. composition: structured poster grid; title block in upper 30%, one framed food/store illustration or photo-card in middle 45%, small info strip at bottom 12-16%. avoid: no futuristic UI, no glossy luxury, no random antique clutter, no saturated pop sticker collage.",
+  "best_for": ["daily_attract", "brand_image", "festival"],
+  "avoid_for": ["premium_minimal", "modern_tech"],
+  "category_affinity": ["老店", "早餐", "粉面", "家常菜", "湘菜", "川菜", "云贵川菜", "广西菜", "江西菜", "湖北菜", "社区餐饮", "地域菜"],
+  "design_lessons": ["复古招贴需要印刷秩序和旧纸质感，不是简单加滤镜。"]
+}
