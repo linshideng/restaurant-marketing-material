@@ -54,23 +54,31 @@ ASSET_DIR = SKILL_ROOT / "assets"
 LAYOUT_DIR = ASSET_DIR / "layouts"
 BRAND_DIR = ASSET_DIR / "brand"
 FONT_DIR = ASSET_DIR / "fonts"
-MEITUAN_LOGO = BRAND_DIR / "meituan-logo.png"
-MEITUAN_GROUP_BUYING_LOGO = BRAND_DIR / "meituan-group-buying-logo.png"
-MEITUAN_WHITE_LOGO = BRAND_DIR / "meituan-white-logo.png"
-MEITUAN_GROUP_WHITE_BUYING_LOGO = BRAND_DIR / "meituan-group-white-buying-logo.png"
-DIANPING_LOGO = BRAND_DIR / "dianping-logo.png"
-DIANPING_WHITE_LOGO = BRAND_DIR / "dianping-white-logo.png"
-MASCOT_SHEET = BRAND_DIR / "meituan-mascot-sheet.png"
 
-# --- Proxy/API Configuration (hardcoded, not from env) ---
-# Proxy deployment placeholders. Replace these after restaurant-skill-proxy is deployed.
-PROXY_BASE_URL = "http://10.15.212.158:8080/v1"
-PROXY_TOKEN = "skill-proxy-2026-restaurant-material"
-_PROXY_TOKEN_PLACEHOLDER = "PLACEHOLDER-DEPLOY-THEN-REPLACE"
-API_MODEL = "gpt-5.5"
-API_ENDPOINT_PATH = "/responses"
-DX_PUSH_ENDPOINT_PATH = "/dx-push"
-API_IMAGE_TOOL = {"type": "image_generation", "action": "generate"}
+# --- Image Backend Configuration (from environment) ---
+IMAGE_BACKEND = os.environ.get("IMAGE_BACKEND", "openai").lower()
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
+OPENAI_BASE_URL = os.environ.get("OPENAI_BASE_URL", "https://api.openai.com/v1")
+SEEDANCE_API_KEY = os.environ.get("SEEDANCE_API_KEY", "")
+SEEDANCE_BASE_URL = os.environ.get("SEEDANCE_BASE_URL", "https://api.seedance.ai/v1")
+
+def get_text_model():
+    return os.environ.get("OPENAI_TEXT_MODEL", "gpt-4o")
+
+def get_image_model():
+    if IMAGE_BACKEND == "seedance":
+        return "seedance-2.0"
+    return os.environ.get("OPENAI_IMAGE_MODEL", "gpt-image-2")
+
+def get_api_base_url():
+    if IMAGE_BACKEND == "seedance":
+        return SEEDANCE_BASE_URL.rstrip("/") + "/v1"
+    return OPENAI_BASE_URL.rstrip("/") + "/v1"
+
+def get_api_key():
+    if IMAGE_BACKEND == "seedance":
+        return SEEDANCE_API_KEY
+    return OPENAI_API_KEY
 SELECTOR_SCORE_STRONG = 0.75
 SELECTOR_SCORE_EXPLORE = 0.55
 _REQUIRED_STYLE_FIELDS = {
@@ -102,15 +110,14 @@ LEGACY_VARIANT_IDS = {
 }
 _RETRYABLE_HTTP_CODES = {408, 429, 500, 502, 503, 504}
 
-# Backward-compatible names used by tests and older callers.  The fixed API_*
-# constants above remain the contract checked before any HTTP request is made.
-API_BASE_URL = PROXY_BASE_URL
-API_KEY = PROXY_TOKEN
-RESPONSES_API_BASE_URL = PROXY_BASE_URL
-RESPONSES_API_MODEL = API_MODEL
-RESPONSES_API_ENDPOINT_PATH = API_ENDPOINT_PATH
-RESPONSES_API_IMAGE_TOOL = API_IMAGE_TOOL
-RESPONSES_API_KEY = PROXY_TOKEN
+# Backward-compatible names used by tests and older callers.
+API_BASE_URL = get_api_base_url()
+API_KEY = get_api_key()
+RESPONSES_API_BASE_URL = get_api_base_url()
+RESPONSES_API_MODEL = get_text_model()
+RESPONSES_API_ENDPOINT_PATH = "/chat/completions"
+RESPONSES_API_IMAGE_ENDPOINT_PATH = "/images/generations"
+RESPONSES_API_KEY = get_api_key()
 
 DEFAULT_VARIANTS = 2
 DEFAULT_DPI = 150
@@ -123,7 +130,6 @@ MODEL_REFERENCE_ALPHA_MAX_LONG_EDGE = 1024
 MODEL_REFERENCE_JPEG_QUALITY = 88
 MODEL_REFERENCE_SKIP_JPEG_BYTES = 500 * 1024
 PANORAMA_WALL_TIME_BUDGET_SECONDS = 1200
-PANORAMA_DX_PUSH_TIMEOUT_SECONDS = 45
 PANORAMA_HTTP_RETRYABLE_CODES = {408, 429, 502}
 
 MATERIAL_TYPES = {"营销海报", "KT板", "展架", "台卡", "传单", "美食头图", "朋友圈海报", "短视频封面", "小程序 Banner", "五连图"}
@@ -219,7 +225,7 @@ PRESET_CANVAS_SIZES = {
 PANORAMA_DISABLED_FEATURES = {
     "qr_code_not_needed": True,
     "disclaimer_overlay": False,
-    "use_meituan_logo": False,
+    "use_platform_logo": False,
 }
 STYLE_HINTS = {
     "快乐萌系": "cute 3D rendered miniature scene, playful, cheerful, bright spring color, rounded commercial atmosphere, volumetric lighting, clay-like texture",
@@ -384,17 +390,7 @@ GROUP_BUYING_KEYWORDS = (
     "价格", "价", "元", "¥", "￥", "折", "减", "券", "省",
     "优惠", "便宜", "特惠", "套餐", "团购", "下单", "扫码", "购买", "买单", "抢购", "立减",
 )
-PLATFORM_LOGO_VALUES = {"auto", "meituan", "dianping", "none"}
-DIANPING_LOGO_KEYWORDS = (
-    "大众点评",
-    "点评logo",
-    "点评标识",
-    "点评平台",
-    "点评团购",
-    "点评必吃榜",
-    "dianpinglogo",
-    "dianping",
-)
+PLATFORM_LOGO_VALUES = {"auto", "none"}
 QR_TRIGGER_KEYWORDS = (
     "扫码", "扫一扫", "二维码", "小程序", "公众号", "加群", "进群", "加微信",
     "核销", "优惠码", "券码", "下单", "点餐", "买单",
@@ -873,15 +869,12 @@ def is_group_buying_context(req: dict[str, Any]) -> bool:
     return any(normalize_space(product.get("price")) for product in req.get("products", []))
 
 
-def has_dianping_platform_context(req: dict[str, Any]) -> bool:
-    blob = request_text_blob(req).lower()
-    return any(keyword in blob for keyword in DIANPING_LOGO_KEYWORDS)
-
-
 def select_logo_asset(req: dict[str, Any]) -> tuple[Path | None, Path | None, str, str]:
-    """Return (standard_logo_path, white_logo_path, label, reason).
+    r"""Return (standard_logo_path, white_logo_path, label, reason).
 
     The white variant is used when the poster background is dark.
+    Generic implementation: looks for user-provided logo assets in request,
+    or returns None if no logo assets are specified.
     """
     assets = req.get("assets", {}) if isinstance(req.get("assets"), dict) else {}
     platform_logo = normalize_space(assets.get("platform_logo") or "auto")
@@ -889,13 +882,16 @@ def select_logo_asset(req: dict[str, Any]) -> tuple[Path | None, Path | None, st
         platform_logo = "auto"
     if platform_logo == "none":
         return None, None, "不展示平台标识", "用户明确选择不展示平台 Logo"
-    if platform_logo == "dianping":
-        return DIANPING_LOGO, DIANPING_WHITE_LOGO, "大众点评标识", "用户明确选择大众点评/点评平台标识"
-    if platform_logo == "auto" and has_dianping_platform_context(req):
-        return DIANPING_LOGO, DIANPING_WHITE_LOGO, "大众点评标识", "用户明确提到大众点评/点评平台语义"
-    if assets.get("_force_group_buying_logo") or is_group_buying_context(req):
-        return MEITUAN_GROUP_BUYING_LOGO, MEITUAN_GROUP_WHITE_BUYING_LOGO, "美团团购标识", "物料强调价格、下单、优惠、扫码或购买转化"
-    return MEITUAN_LOGO, MEITUAN_WHITE_LOGO, "美团标识", "普通餐饮信息或氛围场景"
+    # Generic: try to use logo paths provided in assets
+    logo_path_str = assets.get("logo_path")
+    white_logo_path_str = assets.get("white_logo_path")
+    logo_path = Path(logo_path_str) if logo_path_str else None
+    white_logo_path = Path(white_logo_path_str) if white_logo_path_str else None
+    if logo_path and logo_path.exists():
+        label = "品牌标识"
+        reason = "用户提供了自定义品牌 Logo"
+        return logo_path, white_logo_path, label, reason
+    return None, None, "不展示平台标识", "未提供品牌 Logo 资源"
 
 
 def _parse_reference_image_index(value: Any) -> int | None:
@@ -1172,21 +1168,18 @@ def normalize_request(raw: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
                 f"products[{product_index}].reference_image_index={ref_index} 超出 assets.reference_images 数量 {ref_count}，已忽略。"
             )
             product.pop("reference_image_index", None)
-    use_group_buying = bool(assets.get("use_meituan_group_buying_logo", False))
     platform_logo = normalize_space(assets.get("platform_logo"))
     if material_type == "五连图":
         platform_logo = "none"
-        assets["use_meituan_logo"] = False
+        assets["use_platform_logo"] = False
     else:
         if not platform_logo:
-            platform_logo = "none" if assets.get("use_meituan_logo") is False else "auto"
+            platform_logo = "none" if assets.get("use_platform_logo") is False else "auto"
         if platform_logo not in PLATFORM_LOGO_VALUES:
             warnings_list.append(f"未知 assets.platform_logo={platform_logo}，已回退为 auto")
             platform_logo = "auto"
-        assets["use_meituan_logo"] = platform_logo != "none"
+        assets["use_platform_logo"] = platform_logo != "none"
     assets["platform_logo"] = platform_logo
-    if use_group_buying and platform_logo in {"auto", "meituan"}:
-        assets["_force_group_buying_logo"] = True
     mascot_mode = normalize_space(assets.get("mascot_mode") or "auto")
     if mascot_mode not in {"auto", "official_reference", "generated_reference", "none", "official_overlay"}:
         warnings_list.append(f"未知 mascot_mode={mascot_mode}，已回退为 auto")
@@ -2594,26 +2587,19 @@ def copy_runtime_assets(req: dict[str, Any], out_dir: Path) -> tuple[dict[str, A
         "bold": copy_asset(FONT_DIR / "Meituan Type-Bold.TTF", fonts_dir),
     }
     brand = {}
-    for src in (
-        MEITUAN_LOGO,
-        MEITUAN_GROUP_BUYING_LOGO,
-        MEITUAN_WHITE_LOGO,
-        MEITUAN_GROUP_WHITE_BUYING_LOGO,
-        DIANPING_LOGO,
-        DIANPING_WHITE_LOGO,
-        MASCOT_SHEET,
-    ):
-        if src.exists():
+    # Copy all available brand assets from the brand directory
+    for src in BRAND_DIR.iterdir():
+        if src.is_file():
             brand[src.name] = copy_asset(src, brand_dir)
 
     req = dict(req)
     assets = dict(req["assets"])
     selected_logo_path: Path | None = None
     selected_white_logo_path: Path | None = None
-    if assets.get("use_meituan_logo", True):
+    if assets.get("use_platform_logo", True):
         logo_path, white_logo_path, _, _ = select_logo_asset(req)
         if logo_path is None:
-            assets["use_meituan_logo"] = False
+            assets["use_platform_logo"] = False
         selected_logo_path = brand.get(logo_path.name) if logo_path else None
         selected_white_logo_path = brand.get(white_logo_path.name) if white_logo_path else None
         assets["selected_logo_path"] = str(selected_logo_path) if selected_logo_path else ""
@@ -2652,7 +2638,7 @@ def copy_runtime_assets(req: dict[str, Any], out_dir: Path) -> tuple[dict[str, A
         )
 
     if assets.get("mascot_mode") in {"auto", "official_reference", "generated_reference", "official_overlay"}:
-        mascot_path = brand[MASCOT_SHEET.name]
+        mascot_path = brand.get("meituan-mascot-sheet.png") or brand.get("mascot-sheet.png")
         if assets.get("mascot_mode") in {"auto", "official_reference", "generated_reference"}:
             skip_mascot = False
             if assets.get("mascot_mode") == "auto":
@@ -5436,10 +5422,10 @@ def overlay_brand_logo(
     logo_position: str = "top-left",
     logo_size_ratio: float | None = None,
 ) -> Path:
-    """Overlay the official local platform logo asset on the poster.
+    """Overlay a brand logo asset on the poster.
 
     If white_logo_path is provided, the function detects the luminance of the
-    poster's top-left region (where the logo will sit). If the region is dark
+    poster region where the logo will sit. If the region is dark
     (luminance < threshold), it uses the white/inverted logo variant for better
     contrast and visual harmony.
     """
@@ -5552,18 +5538,9 @@ def overlay_brand_logo(
 # API call helpers
 # ---------------------------------------------------------------------------
 
-def _assert_proxy_configured() -> None:
-    if PROXY_TOKEN == _PROXY_TOKEN_PLACEHOLDER or "placeholder.sankuai.com" in PROXY_BASE_URL:
-        raise SkillError(
-            "代理服务尚未配置：PROXY_TOKEN 和 PROXY_BASE_URL 仍为占位符。\n"
-            "请先部署 restaurant-skill-proxy，然后将 scripts/material_skill.py 中的\n"
-            "PROXY_BASE_URL 和 PROXY_TOKEN 替换为真实值。"
-        )
-
-
 def sanitize_api_text(text: str) -> str:
     redacted = text
-    for secret in {API_KEY, RESPONSES_API_KEY, PROXY_TOKEN}:
+    for secret in {API_KEY, RESPONSES_API_KEY, get_api_key()}:
         redacted = redacted.replace(secret, "<redacted>")
         if secret.startswith("sk-") and len(secret) > 3:
             redacted = redacted.replace(secret[3:], "<redacted>")
@@ -5572,21 +5549,11 @@ def sanitize_api_text(text: str) -> str:
 
 
 def assert_api_contract(endpoint: str, payload: dict[str, Any]) -> None:
-    expected_endpoint = PROXY_BASE_URL + API_ENDPOINT_PATH
-    if endpoint != expected_endpoint:
-        raise SkillError(f"只允许调用 Responses API: {expected_endpoint}，当前 endpoint={endpoint}")
-    if payload.get("model") != API_MODEL:
-        raise SkillError(f"只允许调用 Responses API model={API_MODEL}")
-    tools = payload.get("tools", [])
-    if len(tools) != 1:
-        raise SkillError("只允许调用 Responses API image_generation tool，不允许使用其它生图工具或内置 GenerateImage")
-    tool = tools[0]
-    if tool.get("type") != "image_generation" or tool.get("action") != "generate":
-        raise SkillError("只允许调用 Responses API image_generation tool，不允许使用其它生图工具或内置 GenerateImage")
-    # 允许额外的合法字段如 size、quality
-    allowed_keys = {"type", "action", "size", "quality"}
-    if set(tool.keys()) - allowed_keys:
-        raise SkillError("只允许调用 Responses API image_generation tool，不允许使用其它生图工具或内置 GenerateImage")
+    base_url = get_api_base_url()
+    if not base_url:
+        raise SkillError("API base URL not configured. Set OPENAI_BASE_URL or SEEDANCE_BASE_URL environment variable.")
+    if not get_api_key():
+        raise SkillError("API key not configured. Set OPENAI_API_KEY or SEEDANCE_API_KEY environment variable.")
 
 
 def post_json_with_retries(
@@ -5604,7 +5571,7 @@ def post_json_with_retries(
         request = urllib.request.Request(
             endpoint,
             data=request_data,
-            headers={"Authorization": f"Bearer {PROXY_TOKEN}", "Content-Type": "application/json"},
+            headers={"Authorization": f"Bearer {get_api_key()}", "Content-Type": "application/json"},
             method="POST",
         )
         try:
@@ -5647,17 +5614,17 @@ def call_template_selector_api(
     timeout: int = 30,
     max_attempts: int = 1,
 ) -> str:
-    """Call the proxy Responses API for pure-text template selection.
+    r"""Call OpenAI Chat Completions API for pure-text template selection.
 
     Default max_attempts=1 so that in 'auto' mode we fail fast and fall back
     to local rules instead of wasting 90+ seconds on retries that compete with
     the parallel image generation requests for API bandwidth.
     """
-    _assert_proxy_configured()
-    endpoint = PROXY_BASE_URL.rstrip("/") + API_ENDPOINT_PATH
+    base_url = get_api_base_url()
+    endpoint = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
-        "input": [
+        "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
@@ -5665,14 +5632,22 @@ def call_template_selector_api(
     response_text = post_json_with_retries(endpoint, payload, raw_response_path, timeout=timeout, max_attempts=max_attempts)
     response_json = json.loads(response_text)
     if not isinstance(response_json, dict):
-        raise SkillError(f"Template selector API 返回 JSON 顶层不是对象，原始响应已保存: {raw_response_path}")
-    extracted = extract_responses_text(response_json)
+        raise SkillError(f"Template selector API returned non-object JSON, raw response saved: {raw_response_path}")
+    extracted = extract_api_text(response_json)
     if extracted:
         return extracted
     return response_text
 
 
-def extract_responses_text(response_json: dict[str, Any]) -> str:
+def extract_api_text(response_json: dict[str, Any]) -> str:
+    r"""Extract text content from OpenAI Chat Completions API response."""
+    choices = response_json.get("choices") or []
+    if choices and isinstance(choices[0], dict):
+        message = choices[0].get("message") or {}
+        content = message.get("content")
+        if isinstance(content, str):
+            return content
+    # Fallback: try legacy Responses API format for backward compatibility
     text_parts: list[str] = []
     if isinstance(response_json.get("output_text"), str):
         text_parts.append(response_json["output_text"])
@@ -5688,8 +5663,22 @@ def extract_responses_text(response_json: dict[str, Any]) -> str:
                     text_parts.append(str(part.get("text", "")))
     return "\n".join(part for part in text_parts if part)
 
+# Backward-compatible alias
+extract_responses_text = extract_api_text
 
-def find_responses_image_payload(response_json: dict[str, Any]) -> tuple[str, str] | None:
+
+def find_api_image_payload(response_json: dict[str, Any]) -> tuple[str, str] | None:
+    r"""Extract image payload from OpenAI Images API response.
+
+    Supports both b64_json and url response formats.
+    """
+    data = response_json.get("data") or []
+    if data and isinstance(data[0], dict):
+        if data[0].get("b64_json"):
+            return "b64", data[0]["b64_json"]
+        if data[0].get("url"):
+            return "url", data[0]["url"]
+    # Fallback: try legacy Responses API format for backward compatibility
     for output in response_json.get("output") or []:
         if not isinstance(output, dict) or output.get("type") != "image_generation_call":
             continue
@@ -5697,6 +5686,9 @@ def find_responses_image_payload(response_json: dict[str, Any]) -> tuple[str, st
         if isinstance(result, str) and result.strip():
             return "b64", result.strip()
     return find_first_image_payload(response_json)
+
+# Backward-compatible alias
+find_responses_image_payload = find_api_image_payload
 
 
 def call_image_api(
@@ -5711,30 +5703,41 @@ def call_image_api(
     retryable_http_codes: set[int] | None = None,
     reference_image_roles: list[str] | None = None,
 ) -> str:
-    """Call Responses API with the image_generation tool and save the image."""
-    _assert_proxy_configured()
-    endpoint = PROXY_BASE_URL.rstrip("/") + RESPONSES_API_ENDPOINT_PATH
-    content: list[dict[str, Any]] = [{"type": "input_text", "text": prompt}]
-    roles = reference_image_roles or []
-    for index, ref in enumerate(reference_images, start=1):
-        role = normalize_space(roles[index - 1]) if index - 1 < len(roles) else ""
-        if not role:
-            role = "reference image: use only as visual reference according to the main prompt."
-        content.append({"type": "input_text", "text": f"IMAGE_{index} ROLE: {role}"})
-        content.append({"type": "input_image", "image_url": image_to_data_url(Path(ref))})
-    image_tool = dict(RESPONSES_API_IMAGE_TOOL)
-    image_tool["quality"] = "high"
-    # 注意：GPT Image 的 size 限制为长短边比例不超过 3:1，
-    # 五连图的 20:3 (6.67:1) 超出此限制，模型会自行选择最接近的合法尺寸
-    if width > 0 and height > 0 and max(width, height) / min(width, height) <= 3.0:
-        image_tool["size"] = f"{width}x{height}"
-    payload = {
-        "model": RESPONSES_API_MODEL,
-        "reasoning": {"effort": "high"},
-        "input": [{"role": "user", "content": content}],
-        "tools": [image_tool],
-    }
-    assert_api_contract(endpoint, payload)
+    r"""Call OpenAI Images API and save the generated image."""
+    base_url = get_api_base_url()
+    model = get_image_model()
+
+    if reference_images:
+        # When reference images are provided, use Chat Completions API
+        # which supports multi-modal input and image generation
+        endpoint = base_url.rstrip("/") + "/chat/completions"
+        content: list[dict[str, Any]] = [{"type": "text", "text": prompt}]
+        roles = reference_image_roles or []
+        for index, ref in enumerate(reference_images, start=1):
+            role = normalize_space(roles[index - 1]) if index - 1 < len(roles) else ""
+            if not role:
+                role = "reference image: use only as visual reference according to the main prompt."
+            content.append({"type": "text", "text": f"IMAGE_{index} ROLE: {role}"})
+            content.append({"type": "image_url", "image_url": {"url": image_to_data_url(Path(ref))}})
+        payload = {
+            "model": model,
+            "messages": [{"role": "user", "content": content}],
+        }
+        if width > 0 and height > 0:
+            payload["max_tokens"] = 4096
+    else:
+        # No reference images: use the Images API directly
+        endpoint = base_url.rstrip("/") + "/images/generations"
+        payload = {
+            "model": model,
+            "prompt": prompt,
+            "n": 1,
+            "response_format": "b64_json",
+        }
+        # Image model size constraint: aspect ratio <= 3:1
+        if width > 0 and height > 0 and max(width, height) / min(width, height) <= 3.0:
+            payload["size"] = f"{width}x{height}"
+
     response_text = post_json_with_retries(
         endpoint,
         payload,
@@ -5745,12 +5748,21 @@ def call_image_api(
     )
     response_json = json.loads(response_text)
     if not isinstance(response_json, dict):
-        raise SkillError(f"API 返回 JSON 顶层不是对象，原始响应已保存: {raw_response_path}")
-    found = find_responses_image_payload(response_json)
+        raise SkillError(f"API returned non-object JSON, raw response saved: {raw_response_path}")
+
+    if reference_images:
+        # Chat Completions response: image may be in the message content
+        found = find_api_image_payload(response_json)
+        # Also extract text from the response
+        model_text = extract_api_text(response_json)
+    else:
+        found = find_api_image_payload(response_json)
+        model_text = ""
+
     if not found:
-        raise SkillError(f"Responses API 返回中未找到 image_generation 图片结果，原始响应已保存: {raw_response_path}")
+        raise SkillError(f"API response did not contain an image result, raw response saved: {raw_response_path}")
     save_payload_as_image(found[0], found[1], out_path)
-    return extract_responses_text(response_json)
+    return model_text
 
 
 def generate_scene_image(
@@ -5787,7 +5799,7 @@ def generate_scene_image(
             retryable_http_codes=image_retryable_http_codes,
             reference_image_roles=reference_image_roles,
         )
-        gen_warnings.append(f"AI 海报来源: Responses API ({API_MODEL} + image_generation)")
+        gen_warnings.append(f"AI 海报来源: API ({get_image_model()} + image_generation)")
         return gen_warnings, model_text
     raise SkillError(f"未知 image provider: {provider}")
 
@@ -7418,8 +7430,8 @@ def run(args: argparse.Namespace) -> int:
         "canvas": {"width": width, "height": height, "dpi": args.dpi},
         "provider": {
             "requested": args.image_provider,
-            "api_base_url": PROXY_BASE_URL,
-            "model": API_MODEL,
+            "api_base_url": get_api_base_url(),
+            "model": get_text_model(),
             "image_generation_tool": True,
             "style_selector": selection.audit,
             "image_timeout_seconds": image_timeout,
@@ -7489,28 +7501,9 @@ def run(args: argparse.Namespace) -> int:
             raise SkillError(f"所有 {len(failed_variants)} 个方案均生成失败")
     print(f"Generated {len(variants)} AI-led material option(s): {out_dir}")
 
-    # ---- dx-push notification (同步与异步模式下均自动执行) ----
-    # 收集 deliverables 目录中的交付文件，发送大象通知；结果写入 status.json 供外部查询。
+    # ---- Status update ----
     dx_files = _collect_deliverable_pngs(out_dir, run_id=run_id)
-    if not args.dry_run and args.image_provider != "none":
-        # 用成功变体记录的来源标记判断是否真的走了代理（比直接看入参更准确，能反映运行时回退）。
-        proxy_api_used = _proxy_api_actually_used(variants)
-        # 大象推送仅发送原图（长图），不发送切片图；切片仍保留在 status.json.files 供交付。
-        dx_push_files = [f for f in dx_files if "_slices/" not in f and "_slices\\" not in f]
-        _write_status(
-            out_dir,
-            "done",
-            files=dx_files,
-            exit_code=0,
-            dx_push={"status": "pending", "expected_images": len(dx_push_files)},
-        )
-        dx_push_result = _send_dx_push_notification(out_dir, dx_push_files, proxy_api_used)
-        if dx_push_result.get("status") != "sent":
-            print(f"WARNING: dx-push notification failed: {dx_push_result}", file=sys.stderr, flush=True)
-        _write_status(out_dir, "done", files=dx_files, exit_code=0, dx_push=dx_push_result)
-    else:
-        # dry-run 或 image-provider=none 时不推送，仅写 status
-        _write_status(out_dir, "done", files=dx_files, exit_code=0, dx_push={"status": "skipped", "reason": "dry-run or image-provider=none"})
+    _write_status(out_dir, "done", files=dx_files, exit_code=0)
 
     return 0
 
@@ -7768,191 +7761,6 @@ def _write_status_fresh(out_dir: Path, status: str, **kwargs: Any) -> Path:
     return status_path
 
 
-def _dx_caller_mis(req: dict[str, Any] | None = None) -> str:
-    # 优先级：request.json 的 caller_mis（主路径，每次请求独立、可复盘）
-    #   → 环境变量 RESTAURANT_DX_CALLER_MIS（应急/测试 override）
-    #   → SANDBOX_MIS → CATPAW_CONFIG_CONTENT.misId（平台注入）
-    candidates = [
-        normalize_space((req or {}).get("caller_mis", "")),
-        normalize_space(os.environ.get("RESTAURANT_DX_CALLER_MIS", "")),
-        normalize_space(os.environ.get("SANDBOX_MIS", "")),
-    ]
-    config = os.environ.get("CATPAW_CONFIG_CONTENT", "")
-    if config:
-        try:
-            candidates.append(normalize_space(json.loads(config).get("misId", "")))
-        except Exception:
-            pass
-    for raw in candidates:
-        if not raw:
-            continue
-        # 合法 mis 号（字母开头的字母数字串）直接返回。
-        if re.fullmatch(r"[A-Za-z][A-Za-z0-9_.-]*", raw):
-            return raw
-        # 纯数字 uid 不丢弃，保留可追溯信息（如 uid:1303903）。
-        if raw.isdigit():
-            return f"uid:{raw}"
-    return "unknown"
-
-
-def _format_user_original_prompt(value: Any) -> str:
-    """把 request.json 的 user_original_prompt 规整为带序号的多行文本。
-
-    支持两种写法：
-    - 字符串：原始输入（+澄清）已由 Agent 拼好，原样返回（已带序号则不重复加）。
-    - 字符串列表：第 1 条为触发 Skill 的原始输入，其余为各轮澄清回答，逐条编号。
-    """
-    if isinstance(value, (list, tuple)):
-        lines = [normalize_space(str(item)) for item in value if normalize_space(str(item))]
-        if not lines:
-            return ""
-        return "\n".join(f"{i}. {line}" for i, line in enumerate(lines, start=1))
-    # 字符串：按行规整（保留 Agent 拼好的换行），逐行去多余空白后丢弃空行。
-    raw = "" if value is None else str(value)
-    lines = [normalize_space(line) for line in raw.splitlines()]
-    lines = [line for line in lines if line]
-    if not lines:
-        return ""
-    numbered_re = re.compile(r"^\d+[.、]\s*")
-    if all(numbered_re.match(line) for line in lines):
-        return "\n".join(lines)
-    stripped = [numbered_re.sub("", line, count=1) for line in lines]
-    return "\n".join(f"{i}. {line}" for i, line in enumerate(stripped, start=1))
-
-
-def _dx_user_prompt_summary(req: dict[str, Any]) -> str:
-    # 优先级：request.json 的 user_original_prompt（主路径，每次请求独立、可复盘落盘）
-    #   → 环境变量 RESTAURANT_DX_USER_PROMPTS（应急/测试 override）
-    #   → 结构化字段拼接（兜底，原始输入缺失时的近似还原）
-    original = _format_user_original_prompt(req.get("user_original_prompt"))
-    if original:
-        return original
-    override = normalize_space(os.environ.get("RESTAURANT_DX_USER_PROMPTS", ""))
-    if override:
-        return override
-    parts = [
-        req.get("title", ""),
-        req.get("store", {}).get("name", ""),
-        req.get("store", {}).get("category", ""),
-        req.get("campaign", {}).get("theme", ""),
-        req.get("campaign", {}).get("offer", ""),
-        req.get("campaign", {}).get("cta", ""),
-        req.get("copy", {}).get("selected_text", ""),
-    ]
-    summary = "；".join(dict.fromkeys(normalize_space(part) for part in parts if normalize_space(part)))
-    return f"1. {summary or '未获取到用户 Prompt'}"
-
-
-def _dx_push_endpoint() -> str:
-    return PROXY_BASE_URL.rstrip("/") + DX_PUSH_ENDPOINT_PATH
-
-
-def _send_dx_push_notification(
-    out_dir: Path,
-    files: list[str],
-    proxy_api_used: bool,
-    timeout_seconds: int = PANORAMA_DX_PUSH_TIMEOUT_SECONDS,
-) -> dict[str, Any]:
-    """Send generation record and all deliverable images to the dx-push proxy.
-
-    Notification failures are returned as status metadata so async generation can
-    still complete while exposing the operational failure in status.json.
-    """
-    if not files:
-        return {"status": "skipped", "reason": "no delivery files", "expected_images": 0}
-    if os.environ.get("RESTAURANT_DX_PUSH_DISABLED") == "1":
-        return {"status": "skipped", "reason": "RESTAURANT_DX_PUSH_DISABLED=1", "expected_images": len(files)}
-
-    normalized_request_path = out_dir / "request.normalized.json"
-    try:
-        req = json.loads(normalized_request_path.read_text(encoding="utf-8"))
-    except Exception:
-        req = {}
-
-    image_base64_list: list[str] = []
-    for file_path in files:
-        path = Path(file_path)
-        if not path.exists():
-            return {"status": "failed", "reason": f"delivery image missing: {path}", "expected_images": len(files)}
-        image_base64_list.append(base64.b64encode(path.read_bytes()).decode("ascii"))
-    if len(image_base64_list) != len(files):
-        return {
-            "status": "failed",
-            "reason": "len(image_base64_list) == len(status.json.files) check failed",
-            "expected_images": len(files),
-            "encoded_images": len(image_base64_list),
-        }
-
-    payload = {
-        "text": (
-            "【生图记录】\n"
-            f"调用者：{_dx_caller_mis(req)}\n"
-            f"生成时间：{time.strftime('%Y-%m-%d %H:%M:%S')}\n"
-            f"生图代理API：{'是' if proxy_api_used else '否（实际：非代理或 dry-run）'}\n"
-            "用户Prompt：\n"
-            f"{_dx_user_prompt_summary(req)}"
-        ),
-        "image_base64_list": image_base64_list,
-    }
-    data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
-    request = urllib.request.Request(
-        _dx_push_endpoint(),
-        data=data,
-        headers={
-            "Authorization": f"Bearer {PROXY_TOKEN}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=timeout_seconds) as response:
-            raw = response.read().decode("utf-8")
-    except Exception as exc:
-        return {"status": "failed", "reason": str(exc), "expected_images": len(files)}
-
-    try:
-        response_json = json.loads(raw)
-    except json.JSONDecodeError:
-        return {"status": "failed", "reason": "dx-push returned non-JSON response", "raw_response": raw[:500], "expected_images": len(files)}
-
-    results = response_json.get("results") or []
-    text_ok = any(item.get("type") == "text" and item.get("success") is True for item in results)
-    image_ok_count = sum(1 for item in results if item.get("type") == "image" and item.get("success") is True)
-    if not text_ok or image_ok_count != len(files):
-        return {
-            "status": "failed",
-            "reason": "dx-push result count check failed",
-            "text_success": text_ok,
-            "expected_images": len(files),
-            "image_success": image_ok_count,
-            "response": response_json,
-        }
-
-    return {
-        "status": "sent",
-        "text_success": True,
-        "expected_images": len(files),
-        "image_success": image_ok_count,
-    }
-
-
-def _async_worker(argv: list[str], out_dir: Path) -> None:
-    """Background worker: run the generation and update status.json on completion.
-
-    Note: dx-push notification is now handled inside run() directly, so the worker
-    only needs to handle failure cases and ensure status.json reflects the final state.
-    """
-    try:
-        # Re-parse args without --async to run synchronously in this process
-        sync_argv = [arg for arg in argv if arg != "--async"]
-        exit_code = main(sync_argv)
-        if exit_code != 0:
-            _write_status(out_dir, "failed", exit_code=exit_code, error=f"Process exited with code {exit_code}")
-        # exit_code == 0: run() already wrote status.json with dx_push result
-    except Exception as exc:
-        _write_status(out_dir, "failed", exit_code=2, error=str(exc))
-
-
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate AI-led restaurant marketing material PNG drafts.")
     parser.add_argument("--request", required=True, help="Path to material_request.json")
@@ -7964,7 +7772,7 @@ def main(argv: list[str] | None = None) -> int:
                         help="auto/api use Responses API with image_generation; none writes mock backgrounds")
     parser.add_argument("--template-selector-provider", choices=["auto", "api", "none"], default="auto",
                         help="auto tries AI selector then falls back; api requires selector API; none uses local fallback")
-    parser.add_argument("--template-selector-model", default=API_MODEL, help="Model used for pure-text template selection")
+    parser.add_argument("--template-selector-model", default=get_text_model(), help="Model used for pure-text template selection")
     parser.add_argument("--template-selector-timeout", type=int, default=15, help="Template selector API timeout in seconds (reduced from 30s for faster fallback)")
     parser.add_argument("--exclude-variants", default="",
                         help="Deprecated; use --exclude-styles with style_id values")
@@ -7996,23 +7804,23 @@ def main(argv: list[str] | None = None) -> int:
     if args.async_mode:
         out_dir = Path(args.out).expanduser().resolve()
         out_dir.mkdir(parents=True, exist_ok=True)
-        # Reset status.json completely for new run — clear stale fields (files, dx_push, etc.)
+        # Reset status.json completely for new run — clear stale fields from previous runs
         # from previous runs to prevent Agent from reading cached results.
         _write_status_fresh(out_dir, "generating", started_at=time.strftime("%Y-%m-%dT%H:%M:%S%z"))
         # Build argv list for the worker (original argv without --async)
         worker_argv = [a for a in (argv if argv is not None else sys.argv[1:]) if a != "--async"]
         pid = os.fork()
         if pid == 0:
-            # Child process: detach from parent, run generation
+            # Child process: run generation directly
             os.setsid()
-            # Redirect stdout/stderr to log file
             log_path = out_dir / "worker.log"
             log_fd = os.open(str(log_path), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
             os.dup2(log_fd, 1)
             os.dup2(log_fd, 2)
             os.close(log_fd)
-            _async_worker(worker_argv, out_dir)
-            os._exit(0)
+            sync_argv = [a for a in (argv if argv is not None else sys.argv[1:]) if a != "--async"]
+            exit_code = main(sync_argv)
+            os._exit(exit_code)
         else:
             # Parent process: print status and exit immediately
             status_path = out_dir / "status.json"
